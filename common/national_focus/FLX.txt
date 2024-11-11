@@ -1,0 +1,282 @@
+﻿focus_tree = {
+	id = flx_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = FLX
+		}
+
+	}
+	
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 3000 }
+
+	focus = {
+		id = FLX_Army_1
+		icon = GFX_goal_generic_small_arms
+		x = 3
+		y = 5
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 30
+		#prerequisite = { focus = AST_workers_paradise }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		select_effect = {
+			FLX = {
+				division_template = {
+					name = "FUTURE"				# Represents: German-trained divisions (better equipment than rest),
+					regiments = {					#	and local militia groups.
+						infantry = { x = 0 y = 0 }	# Note: Chinese divisions were brigade-sized compared other nations' armies
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 1 y = 3 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						infantry = { x = 2 y = 3 }
+						infantry = { x = 3 y = 0 }
+						infantry = { x = 3 y = 1 }
+						infantry = { x = 3 y = 2 }
+						infantry = { x = 3 y = 3 }
+						infantry = { x = 4 y = 0 }
+						infantry = { x = 4 y = 1 }
+						infantry = { x = 4 y = 2 }
+						infantry = { x = 4 y = 3 }
+						
+					}
+				}
+				set_division_template_lock = {
+				    division_template = "FUTURE"
+				    is_locked = yes
+				}
+			}
+
+		}
+		completion_reward = {
+			add_political_power = -100
+			386 = {
+				create_unit = {
+				    division = "name = \"未来之师\" division_template = \"FUTURE\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = FLX
+				}
+				create_unit = {
+				    division = "name = \"未来之师\" division_template = \"FUTURE\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = FLX
+				}
+				create_unit = {
+				    division = "name = \"未来之师\" division_template = \"FUTURE\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = FLX
+				}
+				create_unit = {
+				    division = "name = \"未来之师\" division_template = \"FUTURE\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = FLX
+				}
+				create_unit = {
+				    division = "name = \"未来之师\" division_template = \"FUTURE\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = FLX
+				}
+			}
+			385 = {
+				create_unit = {
+				    division = "name = \"未来之师\" division_template = \"FUTURE\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = FLX
+				}
+				create_unit = {
+				    division = "name = \"未来之师\" division_template = \"FUTURE\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = FLX
+				}
+				create_unit = {
+				    division = "name = \"未来之师\" division_template = \"FUTURE\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = FLX
+				}
+				create_unit = {
+				    division = "name = \"未来之师\" division_template = \"FUTURE\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = FLX
+				}
+				create_unit = {
+				    division = "name = \"未来之师\" division_template = \"FUTURE\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = FLX
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Public_1
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = FLX_Army_1
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 30
+		prerequisite = { 
+			focus = FLX_Army_1
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			create_faction = ANTI_LEI_FACTION
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Public_2
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = FLX_Public_1
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 30
+		prerequisite = { 
+			focus = FLX_Public_1
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			328 = {
+				set_demilitarized_zone = yes
+			}#死老鼠A01
+			610 = {
+				set_demilitarized_zone = yes
+			}#熊猫A02
+			716 = {
+				set_demilitarized_zone = yes
+			}#紫菀A03
+			745 = {
+				set_demilitarized_zone = yes
+			}#跳跳糖国A04
+			617 = {
+				set_demilitarized_zone = yes
+			}#虎A05
+			619 = {
+				set_demilitarized_zone = yes
+			}#雷吧三大选CA06
+			287 = {
+				set_demilitarized_zone = yes
+			}#雷吧三大选C
+			759 = {
+				set_demilitarized_zone = yes
+			}#雷吧三大选C
+			602 = {
+				set_demilitarized_zone = yes
+			}#莫诺A07
+			608 = {
+				set_demilitarized_zone = yes
+			}#小行星国A08
+			609 = {
+				set_demilitarized_zone = yes
+			}#百裂冲击A09
+			604 = {
+				set_demilitarized_zone = yes
+			}#氢氦国A10
+			755 = {
+				set_demilitarized_zone = yes
+			}#氢氦国
+			597 = {
+				set_demilitarized_zone = yes
+			}#神人国A11
+			743 = {
+				set_demilitarized_zone = yes
+			}#神人国
+			595 = {
+				set_demilitarized_zone = yes
+			}#智齿国A12
+			592 = {
+				set_demilitarized_zone = yes
+			}#原神国A13
+			165 = {
+				set_demilitarized_zone = yes
+			}#巴萨等你复兴A14
+			533 = {
+				set_demilitarized_zone = yes
+			}#厄诡椪国A15
+			531 = {
+				set_demilitarized_zone = yes
+			}#二次元坚果A16
+			715 = {
+				set_demilitarized_zone = yes
+			}#洛樱A17
+			598 = {
+				set_demilitarized_zone = yes
+			}#银海A18
+			614 = {
+				set_demilitarized_zone = yes
+			}#街角A19
+			611 = {
+				set_demilitarized_zone = yes
+			}#米米世界A20
+			606 = {
+				set_demilitarized_zone = yes
+			}#面包狗A21
+			283 = {
+				set_demilitarized_zone = yes
+			}#柯斯丘什科A22
+			616 = {
+				set_demilitarized_zone = yes
+			}#柯斯丘什科
+			613 = {
+				set_demilitarized_zone = yes
+			}#南冰洋A23
+			594 = {
+				set_demilitarized_zone = yes
+			}#南滑A24
+			591 = {
+				set_demilitarized_zone = yes
+			}#猴督A25
+			593 = {
+				set_demilitarized_zone = yes
+			}#食雪大将军A26
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}		

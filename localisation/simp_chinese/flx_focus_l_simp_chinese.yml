@@ -1,0 +1,9 @@
+﻿l_simp_chinese:
+ FLX_Army_1:0 "建立反雷战斗团"
+ FLX_Army_1_desc:0 "为了在美国站稳脚跟，我们需要整合现有的穿越者，建立一支强大的军队。尽管这可能会花费很多时间……"
+ FLX_Public_1:0 "建立世界反雷协会总部"
+ FLX_Public_1_desc:0 "既然穿越到了西雅图，就在这里建立世界反雷协会总部吧。"
+ FLX_Public_1:0 "弄潮"
+ FLX_Public_1_desc:0 "我们的成员将扩散到全世界！"
+ ANTI_LEI_FACTION:0 "世界反雷协会"
+

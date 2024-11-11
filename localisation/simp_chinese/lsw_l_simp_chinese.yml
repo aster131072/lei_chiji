@@ -1,0 +1,31 @@
+﻿l_simp_chinese:
+ LSW_communism:0 "八二六战斗团" 
+ LSW_communism_DEF:0 "八二六战斗团"
+ LSW_fascism:0 "雷理研战斗团"
+ LSW_fascism_DEF:0 "雷理研战斗团"
+ LSW_ADJ:0 "八二六" #国家在宣战条中显示的名称
+ CYJ_communism:0 "产业工人战斗军" 
+ CYJ_communism_DEF:0 "产业工人战斗军"
+ CYJ_ADJ:0 "产业军" #国家在宣战条中显示的名称
+ HCH_communism:0 "红卫兵成都部队" 
+ HCH_communism_DEF:0 "红卫兵成都部队"
+ HCH_ADJ:0 "红成" #国家在宣战条中显示的名称
+ DZG_neutrality:0 "雪豹王国" 
+ DZG_neutrality_DEF:0 "雪豹王国"
+ DZG_ADJ:0 "丁真" #国家在宣战条中显示的名称
+ FLX_neutrality:0 "世界反雷协会" 
+ FLX_neutrality_DEF:0 "世界反雷协会"
+ FLX_ADJ:0 "反雷协会" #国家在宣战条中显示的名称
+ A01_neutrality:0 "死老鼠" 
+ A01_neutrality_DEF:0 "死老鼠"
+ A01_ADJ:0 "死老鼠" #国家在宣战条中显示的名称
+ A01_neutrality:0 "世界反雷协会" 
+ A01_neutrality_DEF:0 "世界反雷协会"
+ A01_ADJ:0 "反雷协会" #国家在宣战条中显示的名称
+ YOUSHOUXING_DESC:0 "团长"
+ XUANLVLAN_DESC:0 "最爱春雷吧吧主"
+ LEISHAOWU_DESC:0 "背叛战友，躲进井盖"
+GATHERING_STORM_NAME:0 "一梦全能"
+GATHERING_STORM_DESC:0 "八二六战斗团在四川崛起，世界反雷协会暗中操纵全世界……谁将成为新世界的主宰？"
+LSW_GATHERING_STORM_DESC:0 "穿越时空的八二六战斗团，到达了1936年的四川。然而，同时穿越而来的还有八二六战斗团的敌人产业军、红成；不知从什么时代到来的理塘王；以及暗中窥伺的雷绍武、世界反雷协会。八二六战斗团能够在这个时代重新崛起吗？"
+FLX_GATHERING_STORM_DESC:0 "在世界反雷协会肉体消灭雷绍武时，雷绍武启动了时光机，让各种东西都穿越到了1936年。在这混乱的时代中，世界反雷协会不仅要对外扩张自身的势力，还要提防内部的分裂分子。世界反雷协会能够真正消灭雷绍武吗？"

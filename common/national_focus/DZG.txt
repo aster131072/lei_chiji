@@ -1,0 +1,288 @@
+﻿focus_tree = {
+	id = dzg_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = DZG
+		}
+
+	}
+	
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 3000 }
+
+	focus = {
+		id = DZG_Army_1
+		icon = GFX_goal_generic_small_arms
+		x = 3
+		y = 5
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 5
+		#prerequisite = { focus = AST_workers_paradise }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		select_effect = {
+			DZG = {
+				division_template = {
+					name = "雪豹骑兵"				# Represents: German-trained divisions (better equipment than rest),
+					regiments = {					#	and local militia groups.
+						cavalry = { x = 0 y = 0 }	# Note: Chinese divisions were brigade-sized compared other nations' armies
+						cavalry = { x = 0 y = 1 }
+						cavalry = { x = 1 y = 0 }
+						cavalry = { x = 1 y = 1 }
+
+					}
+				}
+				set_division_template_lock = {
+				    division_template = "雪豹骑兵"
+				    is_locked = yes
+				}
+			}
+
+		}
+		completion_reward = {
+			752 = {
+				create_unit = {
+				    division = "name = \"雪豹骑兵\" division_template = \"雪豹骑兵\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = DZG
+				}
+				create_unit = {
+				    division = "name = \"雪豹骑兵\" division_template = \"雪豹骑兵\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = DZG
+				}
+				create_unit = {
+				    division = "name = \"雪豹骑兵\" division_template = \"雪豹骑兵\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = DZG
+				}
+				create_unit = {
+				    division = "name = \"雪豹骑兵\" division_template = \"雪豹骑兵\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = DZG
+				}
+				create_unit = {
+				    division = "name = \"雪豹骑兵\" division_template = \"雪豹骑兵\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = DZG
+				}
+				create_unit = {
+				    division = "name = \"雪豹骑兵\" division_template = \"雪豹骑兵\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = DZG
+				}
+			}
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = DZG_War_1
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = DZG_Army_1
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = DZG_Army_1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			DZG = {
+				declare_war_on = {
+				    target = TIB
+				    type = annex_everything
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = DZG_Manpower_1
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = DZG_War_1
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = DZG_War_1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			DZG = {
+				add_manpower = 100000
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = DZG_Own_1
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = DZG_Manpower_1
+		
+		available = {
+			controls_state = 601
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = DZG_Manpower_1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			set_state_owner = 601
+			white_peace = TIB
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = DZG_Declare_1
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = DZG_Own_1
+		
+		available = {
+			controls_state = 601
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = DZG_Own_1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			322 = {
+				add_claim_by = DZG
+			}
+			757 = {
+				add_claim_by = DZG
+			}
+			758 = {
+				add_claim_by = DZG
+			}
+			754 = {
+				add_claim_by = DZG
+			}
+			755 = {
+				add_claim_by = DZG
+			}
+			604 = {
+				add_claim_by = DZG
+			}
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+focus = {
+		id = DZG_Army_1
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = DZG_Own_1
+		bypass = {
+		}
+		
+		cost = 5
+		prerequisite = { focus = DZG_Declare_1 }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		select_effect = {
+		}
+		completion_reward = {
+			601 = {
+				create_unit = {
+				    division = "name = \"雪豹骑兵\" division_template = \"雪豹骑兵\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = DZG
+				}
+				create_unit = {
+				    division = "name = \"雪豹骑兵\" division_template = \"雪豹骑兵\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = DZG
+				}
+				create_unit = {
+				    division = "name = \"雪豹骑兵\" division_template = \"雪豹骑兵\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = DZG
+				}
+				create_unit = {
+				    division = "name = \"雪豹骑兵\" division_template = \"雪豹骑兵\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = DZG
+				}
+				create_unit = {
+				    division = "name = \"雪豹骑兵\" division_template = \"雪豹骑兵\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = DZG
+				}
+				create_unit = {
+				    division = "name = \"雪豹骑兵\" division_template = \"雪豹骑兵\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = DZG
+				}
+			}
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}		

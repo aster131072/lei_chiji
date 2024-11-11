@@ -1,0 +1,146 @@
+﻿focus_tree = {
+	id = cyj_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = CYJ
+		}
+
+	}
+	
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 3000 }
+
+	focus = {
+		id = CYJ_Army_1
+		icon = GFX_goal_generic_small_arms
+		x = 3
+		y = 5
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		#prerequisite = { focus = AST_workers_paradise }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		select_effect = {
+			CYJ = {
+				division_template = {
+					name = "成都老兵"				# Represents: German-trained divisions (better equipment than rest),
+					regiments = {					#	and local militia groups.
+						infantry = { x = 0 y = 0 }	# Note: Chinese divisions were brigade-sized compared other nations' armies
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+					}
+				}
+				set_division_template_lock = {
+				    division_template = "成都老兵"
+				    is_locked = yes
+				}
+			}
+
+		}
+		completion_reward = {
+			add_political_power = 100
+			753 = {
+				create_unit = {
+				    division = "name = \"军区增援\" division_template = \"成都老兵\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = CYJ
+				}
+				create_unit = {
+				    division = "name = \"军区增援\" division_template = \"成都老兵\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = CYJ
+				}
+				create_unit = {
+				    division = "name = \"军区增援\" division_template = \"成都老兵\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = CYJ
+				}
+			}
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = CYJ_Army_2
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = CYJ_Army_1
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { focus = CYJ_Army_1 }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		select_effect = {
+			CYJ = {
+				division_template = {
+					name = "工人战斗队"				# Represents: German-trained divisions (better equipment than rest),
+					regiments = {					#	and local militia groups.
+						infantry = { x = 0 y = 0 }	# Note: Chinese divisions were brigade-sized compared other nations' armies
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+					}
+				}
+				set_division_template_lock = {
+				    division_template = "工人战斗队"
+				    is_locked = yes
+				}
+			}
+
+		}
+		completion_reward = {
+			add_political_power = -20
+			753 = {
+				create_unit = {
+				    division = "name = \"工人部队\" division_template = \"工人战斗队\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = CYJ
+				}
+				create_unit = {
+				    division = "name = \"工人部队\" division_template = \"工人战斗队\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = CYJ
+				}
+				create_unit = {
+				    division = "name = \"工人部队\" division_template = \"工人战斗队\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = CYJ
+				}
+				create_unit = {
+				    division = "name = \"工人部队\" division_template = \"工人战斗队\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = CYJ
+				}
+				create_unit = {
+				    division = "name = \"工人部队\" division_template = \"工人战斗队\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = CYJ
+				}
+				
+			}
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}		

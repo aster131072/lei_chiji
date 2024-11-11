@@ -1,0 +1,58 @@
+characters={
+	ZhangZhuSheng = {
+		name = ZhangZhuSheng 
+		portraits = {
+			civilian = {
+				small = "GFX_idea_south_america_generic_leader_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			allowed  = {
+				original_tag  = LSW
+			}
+			traits  = {
+				cultural_hegemony_theorist 
+			}
+		}
+	}
+	JiangHaiYun = {
+		name = JiangHaiYun 
+		portraits = {
+			civilian = {
+				small = "GFX_idea_south_america_generic_leader_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			allowed  = {
+				original_tag  = LSW
+			}
+			traits  = {
+				trait_ZhengWei 
+			}
+		}
+	}
+
+	LeiShaoWu = {
+		name = LeiShaoWu 
+		portraits = {
+			civilian = {
+				small = "GFX_idea_south_america_generic_leader_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			allowed  = {
+				original_tag  = LSW
+			}
+			available = {
+				has_completed_focus = LSW_Public_B
+			}
+			traits  = {
+				NOR_fascist_lackey
+			}
+		}
+	}
+
+}

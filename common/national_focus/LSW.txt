@@ -1,0 +1,1424 @@
+﻿focus_tree = {
+	id = lsw_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = LSW
+		}
+
+	}
+	
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 3000 }
+
+	focus = {
+		id = LSW_Army_A
+		icon = GFX_goal_generic_small_arms
+		x = 3
+		y = 5
+		#relative_position_id = AST_empower_the_workers
+		allow_branch = {
+			has_political_power > -500
+		}
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		#prerequisite = { focus = AST_workers_paradise }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		select_effect = {
+			add_political_power = -20
+			LSW = {
+				division_template = {
+					name = "826革命战斗队"				# Represents: German-trained divisions (better equipment than rest),
+					regiments = {					#	and local militia groups.
+						infantry = { x = 0 y = 0 }	# Note: Chinese divisions were brigade-sized compared other nations' armies
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+					}
+				}
+				set_division_template_lock = {
+				    division_template = "826革命战斗队"
+				    is_locked = yes
+				}
+			}
+
+		}
+		completion_reward = {
+
+			605 = {
+				create_unit = {
+				    division = "name = \"元老级1113战斗队\" division_template = \"826革命战斗队\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = LSW
+				}
+				create_unit = {
+				    division = "name = \"元老级1113战斗队\" division_template = \"826革命战斗队\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = LSW
+				}
+				create_unit = {
+				    division = "name = \"元老级1113战斗队\" division_template = \"826革命战斗队\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = LSW
+				}
+				create_unit = {
+				    division = "name = \"元老级1113战斗队\" division_template = \"826革命战斗队\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = LSW
+				}
+				create_unit = {
+				    division = "name = \"元老级1113战斗队\" division_template = \"826革命战斗队\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = LSW
+				}
+			}
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Army_NO_LSW
+		icon = GFX_focus_generic_court
+		x = -3
+		y = 1
+		relative_position_id = LSW_Army_A
+		
+		available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { focus = LSW_Army_A }
+		mutually_exclusive = { focus = LSW_Army_B }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = -100
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	focus = {
+		id = LSW_Army_B
+		icon = GFX_goal_generic_major_war
+		x = 3
+		y = 1
+		relative_position_id = LSW_Army_A
+		
+		available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { focus = LSW_Army_A }
+		mutually_exclusive = { focus = LSW_Army_NO_LSW }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Public_A
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 0
+		y = 1
+		relative_position_id = LSW_Army_B
+		
+		available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { focus = LSW_Army_B }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_war_support = 0.1
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Public_B
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 0
+		y = 1
+		relative_position_id = LSW_Public_A
+		
+		available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { focus = LSW_Public_A }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.1
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Public_A1
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 0
+		y = 1
+		relative_position_id = LSW_Army_NO_LSW
+		
+		available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { focus = LSW_Army_NO_LSW }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_war_support = 0.05
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Public_B1
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 0
+		y = 1
+		relative_position_id = LSW_Public_A1
+		
+		available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { focus = LSW_Public_A1 }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_War_1
+		icon = GFX_goal_generic_major_alliance
+		x = 3
+		y = 1
+		relative_position_id = LSW_Public_B1
+		
+		available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_Public_B1
+			focus = LSW_Public_B
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		#search_filters = { FOCUS_FILTER_PROPAGANDA }
+		completion_reward = {
+			create_faction = ANTI_CYJ_FACTION
+			LSW = { add_to_faction = HCH }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_War_2
+		icon = GFX_focus_generic_limited_social_mobilization
+		x = 0
+		y = 1
+		relative_position_id = LSW_War_1
+		
+		available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_War_1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			declare_war_on = {
+			    target = CYJ
+			    type = annex_everything
+			}
+			HCH = {
+				declare_war_on = {
+				    target = CYJ
+				    type = annex_everything
+				}
+			}
+			hidden_effect = {
+					CYJ = {
+						set_province_controller = 4925
+					}
+					605 = {
+						create_unit = {
+						    division = "name = \"军区增援\" division_template = \"成都老兵\" start_experience_factor = 1 start_equipment_factor = 1"
+						    owner = CYJ
+						    prioritize_location = 4925
+						}
+					}
+			}
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_War_3
+		icon = GFX_goal_generic_national_unity
+		x = -2
+		y = 1
+		relative_position_id = LSW_War_2
+		
+		available = {
+			has_war_with = CYJ
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_War_2
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = { FOCUS_FILTER_SWI_MILITARY_READINESS }
+		completion_reward = {
+			LSW = { add_to_faction = DZG }
+			DZG = {
+				declare_war_on = {
+				    target = CYJ
+				    type = annex_everything
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_War_5
+		icon = GFX_focus_generic_total_war
+		x = 0
+		y = 1
+		relative_position_id = LSW_War_3
+		
+		available = {
+			has_war_with = CYJ
+			LSW = {
+				surrender_progress > 0.5
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_War_3
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = { FOCUS_FILTER_SWI_MILITARY_READINESS }
+		completion_reward = {
+			add_manpower = 100000
+			add_war_support = 1
+			add_stability = -1
+			add_ideas = tot_economic_mobilisation
+			add_ideas = scraping_the_barrel
+			add_ideas = closed_economy
+			605 = {
+				add_manpower = -2147483
+				set_building_level = {
+				    type = bunker
+				    level = 4
+				    province = {
+				        id = 6999
+				        id = 7240
+				        id = 12705
+				        level < 4
+				    }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 10
+				surrender_progress > 0.7
+			}
+		}
+	}
+	focus = {
+		id = LSW_War_4
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 2
+		y = 1
+		relative_position_id = LSW_War_2
+		
+		available = {
+			has_war_with = CYJ
+			if ={
+				limit = {
+					LSW = {
+						is_ai = yes
+					}
+				}
+				always = yes
+			}
+			else = {
+				AND = {
+					LSW = {
+						surrender_progress < 0.01
+					}
+					CYJ = {
+						surrender_progress > 0.2
+					}
+				}
+			}
+
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_War_2
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = { FOCUS_FILTER_SWI_MILITARY_READINESS }
+		completion_reward = {
+			605 = {
+				add_building_construction = {
+				    type = arms_factory
+				    level = 3
+				    instant_build = yes
+				}
+			}
+			753 = {
+				remove_building = {
+				    type = arms_factory
+				    level = 3
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_War_6
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = LSW_War_4
+		
+		available = {
+			has_war_with = CYJ
+			date > 1937.1.1
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_War_4
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = { FOCUS_FILTER_SWI_MILITARY_READINESS }
+		completion_reward = {
+			white_peace = CYJ
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_War_7
+		icon = GFX_focus_generic_court
+		x = 0
+		y = 1
+		relative_position_id = LSW_War_6
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_War_6
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = { FOCUS_FILTER_SWI_MILITARY_READINESS }
+		completion_reward = {
+			add_political_power = -82.6
+			set_truce = {
+			    target = CYJ
+			    days = 63
+			}
+			create_wargoal = {
+			    type = annex_everything
+			    target = CYJ
+			}
+			CYJ = {
+				delete_unit_template_and_units = {
+				    division_template = "成都老兵"
+				    disband = yes #will refund equipment and manpower
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Win_1
+		icon = GFX_goal_generic_special_forces
+		x = 0
+		y = 1
+		relative_position_id = LSW_War_2
+		
+		available = {
+			NOT = {
+				country_exists = CYJ
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_War_2
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Win_2
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = LSW_Win_1
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_Win_1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_command_power = 100
+			army_experience = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Win_3
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = LSW_Win_2
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_Win_2
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 0.1
+			}
+			add_war_support = LSW.party_popularity@fascism
+			add_stability = -0.1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_War_8
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = LSW_Win_3
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_Win_3
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			LSW = {
+				add_political_power = -100
+				dismantle_faction = yes
+				declare_war_on = {
+				    target = HCH
+				    type = annex_everything
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Army_C
+		icon = GFX_goal_generic_political_pressure
+		x = -2
+		y = 1
+		relative_position_id = LSW_War_8
+		
+		available = {
+			NOT = {
+				country_exists = CYJ
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_War_8
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS }
+		completion_reward = {
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 0.05
+			}
+			if ={
+				limit = {
+					LSW = {
+						is_ai = yes
+					}
+				}
+				add_popularity = {
+				    ideology = fascism
+				    popularity = 0.1
+				}
+			}
+			753 = {
+				create_unit = {
+				    division = "name = \"826志愿军\" division_template = \"826革命战斗队\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = LSW
+				}
+				create_unit = {
+				    division = "name = \"826志愿军\" division_template = \"826革命战斗队\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = LSW
+				}
+				create_unit = {
+				    division = "name = \"826志愿军\" division_template = \"826革命战斗队\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = LSW
+				}
+				create_unit = {
+				    division = "name = \"826志愿军\" division_template = \"826革命战斗队\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = LSW
+				}
+				create_unit = {
+				    division = "name = \"826志愿军\" division_template = \"826革命战斗队\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = LSW
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = {
+		id = LSW_Army_D
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 1
+		relative_position_id = LSW_War_8
+		
+		available = {
+			NOT = {
+				country_exists = HCH
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_War_8
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = { FOCUS_FILTER_INTERNAL_AFFAIRS }
+		completion_reward = {
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 0.05
+			}
+			if ={
+				limit = {
+					LSW = {
+						is_ai = yes
+					}
+				}
+				add_popularity = {
+				    ideology = fascism
+				    popularity = 0.1
+				}
+			}
+			751 = {
+				create_unit = {
+				    division = "name = \"826志愿军\" division_template = \"826革命战斗队\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = LSW
+				}
+				create_unit = {
+				    division = "name = \"826志愿军\" division_template = \"826革命战斗队\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = LSW
+				}
+				create_unit = {
+				    division = "name = \"826志愿军\" division_template = \"826革命战斗队\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = LSW
+				}
+				create_unit = {
+				    division = "name = \"826志愿军\" division_template = \"826革命战斗队\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = LSW
+				}
+				create_unit = {
+				    division = "name = \"826志愿军\" division_template = \"826革命战斗队\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				    owner = LSW
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = {
+		id = LSW_War_9
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = LSW_War_8
+		
+		available = {
+			NOT = {
+				country_exists = HCH
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_War_8
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 0.11
+			}
+			LSW = {
+				add_political_power = -100
+				declare_war_on = {
+				    target = DZG
+				    type = annex_everything
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Ways_You
+		icon = GFX_goal_generic_political_pressure
+		x = -4
+		y = 1
+		relative_position_id = LSW_War_9
+		
+		available = {
+			NOT = {
+				country_exists = DZG
+			}
+			fascism < 0.5
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_War_9
+		}
+		mutually_exclusive = {
+			focus = LSW_Ways_Jiang
+			focus = LSW_Ways_Lei 
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			add_political_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Ways_You_END
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = LSW_Ways_You
+		
+		available = {
+			has_war = no
+		}
+		bypass = {
+		}
+		
+		cost = 30
+		prerequisite = { 
+			focus = LSW_Ways_You
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			add_war_support = -1
+		}
+		completion_reward = {
+			add_war_support = 1
+			add_stability = 1
+			add_political_power = 1113
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Ways_You_END_REAL
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = LSW_Ways_You_END
+		
+		available = {
+			has_war = no
+		}
+		bypass = {
+		}
+		
+		cost = 30
+		prerequisite = { 
+			focus = LSW_Ways_You_END
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			PRC = {
+				annex_country = {
+				    target = LSW
+				    transfer_troops = yes
+				}
+				change_tag_from = LSW
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Ways_Jiang
+		icon = GFX_goal_generic_political_pressure
+		x = 4
+		y = 1
+		relative_position_id = LSW_War_9
+		
+		available = {
+			NOT = {
+				country_exists = DZG
+			}
+			fascism < 0.5
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_War_9
+		}
+		mutually_exclusive = {
+			focus = LSW_Ways_You
+			focus = LSW_Ways_Lei 
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			kill_country_leader = yes
+			add_war_support = 0.1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Ways_Jiang_1
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = LSW_Ways_Jiang
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_Ways_Jiang
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			create_wargoal = {
+			    type = annex_everything
+			    target = YUN
+			}
+			create_wargoal = {
+			    type = annex_everything
+			    target = TIB
+			}
+			create_wargoal = {
+			    type = annex_everything
+			    target = SIK
+			}
+			create_wargoal = {
+			    type = annex_everything
+			    target = XSM
+			}
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Ways_Jiang_2
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 1
+		relative_position_id = LSW_Ways_Jiang
+		
+		available = {
+			CHI = {
+				is_in_faction = yes
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_Ways_Jiang
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			add_political_power = -500
+			YUN = {
+				leave_faction = yes
+			}
+			SIK = {
+				leave_faction = yes
+			}
+			XSM = {
+				leave_faction = yes
+			}
+			YUN = {
+				add_timed_idea = {
+				    idea = HuangTianBa
+				    days = 360
+				}
+			}
+			TIB = {
+				add_timed_idea = {
+				    idea = HuangTianBa
+				    days = 360
+				}
+			}
+			SIK = {
+				add_timed_idea = {
+				    idea = HuangTianBa
+				    days = 360
+				}
+			}
+			XSM = {
+				add_timed_idea = {
+				    idea = HuangTianBa
+				    days = 360
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Ways_Jiang_END
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = LSW_Ways_Jiang_1
+		
+		available = {
+			AND = {
+				YUN = {
+					exists = no
+				}
+				XSM = {
+					exists = no
+				}
+				TIB = {
+					exists = no
+				}
+				SIK = {
+					exists = no
+				}
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 30
+		prerequisite = { 
+			focus = LSW_Ways_Jiang_1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			add_war_support = 0.2
+			create_wargoal = {
+			    type = annex_everything
+			    target = CHI
+			}
+			create_wargoal = {
+			    type = annex_everything
+			    target = JAP
+			}
+			create_wargoal = {
+			    type = annex_everything
+			    target = PRC
+			}
+			create_wargoal = {
+			    type = annex_everything
+			    target = SHX
+			}
+			CHI = {
+				every_core_state = {
+					add_core_of = LSW
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Ways_Lei
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = LSW_War_9
+		
+		available = {
+			fascism > 0.5
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_War_9
+		}
+		mutually_exclusive = {
+			focus = LSW_Ways_Jiang
+			focus = LSW_Ways_You 
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 0.1
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	focus = {
+		id = LSW_Ways_Lei_1
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = LSW_Ways_Lei
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_Ways_Lei
+		}
+		mutually_exclusive = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Research_A1
+		icon = GFX_goal_generic_political_pressure
+		x = -2
+		y = 1
+		relative_position_id = LSW_Ways_Lei_1
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_Ways_Lei_1
+		}
+		mutually_exclusive = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Research_B1
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = LSW_Ways_Lei_1
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_Ways_Lei_1
+		}
+		mutually_exclusive = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = LSW_Research_C1
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 1
+		relative_position_id = LSW_Ways_Lei_1
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = LSW_Ways_Lei_1
+		}
+		mutually_exclusive = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}		
