@@ -307,5 +307,9 @@ A23 = "countries/fanlei.txt"
 A24 = "countries/fanlei.txt"
 A25 = "countries/fanlei.txt"
 A26 = "countries/fanlei.txt"
-
+A27 = "countries/fanlei.txt"
+A28 = "countries/fanlei.txt"
+A29 = "countries/fanlei.txt"
+A30 = "countries/fanlei.txt"
+A31 = "countries/fanlei.txt"
 #NOTE: Useful to add a basic default loc entry for each tag in 00_countries.txt so that hovering over a tag will show the tag's name in loc (ie. PAP: "Papal States")

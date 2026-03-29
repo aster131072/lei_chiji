@@ -234,7 +234,7 @@
 		}
 	}
 focus = {
-		id = DZG_Army_1
+		id = DZG_Army_2
 		icon = GFX_goal_generic_small_arms
 		x = 0
 		y = 1

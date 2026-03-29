@@ -1,0 +1,14 @@
+technology_sharing_group = {
+
+	id = flx_research_sharing
+	name = flx_research_sharing_name
+	desc = flx_research_sharing_desc
+	picture = GFX_technology_sharing_default
+    
+	research_sharing_per_country_bonus = 0.05
+
+    available = {
+        is_in_faction_with = FLX
+    }
+
+}

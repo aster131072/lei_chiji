@@ -1,4 +1,56 @@
 characters={
+	mono = {
+		name = "莫诺" 
+		portraits = {
+			civilian = {
+				small = "GFX_idea_south_america_generic_leader_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = mono
+			allowed  = {
+				original_tag  = FLX
+			}
+			traits  = {
+				trait_mono_advisor 
+			}
+		}
+	}
+	lsw_weiyuanhui = {
+		name = "紧急状态委员会" 
+		portraits = {
+			civilian = {
+				small = "GFX_idea_south_america_generic_leader_1"
+			}
+		}
+	}
+	qinghai = {
+		name = "氢氦" 
+		portraits = {
+			civilian = {
+				small = "GFX_idea_south_america_generic_leader_1"
+			}
+		}
+	}
+	huzhua = {
+		name = "虎爪" 
+		portraits = {
+			civilian = {
+				small = "GFX_idea_south_america_generic_leader_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = huzhua
+			allowed  = {
+				original_tag  = FLX
+			}
+			traits  = {
+				trait_huzhua_advisor 
+			}
+		}
+	}
 	ZhangZhuSheng = {
 		name = ZhangZhuSheng 
 		portraits = {
@@ -8,6 +60,7 @@ characters={
 		}
 		advisor={
 			slot = political_advisor
+			idea_token = ZhangZhuSheng
 			allowed  = {
 				original_tag  = LSW
 			}
@@ -18,6 +71,7 @@ characters={
 	}
 	JiangHaiYun = {
 		name = JiangHaiYun 
+		gender = female
 		portraits = {
 			civilian = {
 				small = "GFX_idea_south_america_generic_leader_1"
@@ -25,6 +79,7 @@ characters={
 		}
 		advisor={
 			slot = political_advisor
+			idea_token = JiangHaiYun
 			allowed  = {
 				original_tag  = LSW
 			}
@@ -33,16 +88,18 @@ characters={
 			}
 		}
 	}
-
 	LeiShaoWu = {
 		name = LeiShaoWu 
 		portraits = {
 			civilian = {
 				small = "GFX_idea_south_america_generic_leader_1"
+				large = "GFX_lsw"
 			}
 		}
+		gender = male
 		advisor={
 			slot = political_advisor
+			idea_token = LeiShaoWu
 			allowed  = {
 				original_tag  = LSW
 			}
@@ -54,5 +111,4 @@ characters={
 			}
 		}
 	}
-
 }

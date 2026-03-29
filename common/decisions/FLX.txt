@@ -1,0 +1,1086 @@
+FLX_bop_category = {
+	FLX_bop_decision_1 = {
+  	cost = 50
+  	days_re_enable = 30
+  	days_remove = 30
+  	available = {
+	  	not = {
+	  		has_country_flag = flx_increasing_influence
+	  	}	  		
+  	}
+		ai_will_do = {
+		    base = 0
+		    modifier = {
+		      add = 100
+					power_balance_value = {
+					    id = flx_balance
+					    value > 0.2
+					}
+		    }
+		}
+  	complete_effect = {
+  		set_country_flag = flx_increasing_influence
+  	}
+		remove_effect = {
+			add_power_balance_value = {
+			    id = flx_balance
+			    value = -0.1
+			}
+			add_to_variable = {
+			    var = FLX.chaos
+			    value = -0.05
+			    tooltip = add_to_flx_chaos_tt
+			}
+			clr_country_flag = flx_increasing_influence
+		}
+  }
+  FLX_bop_decision_2 = {
+  	cost = 50
+  	days_re_enable = 30
+  	days_remove = 30
+  	available = {
+	  	not = {
+	  		has_country_flag = flx_increasing_influence
+	  	}	  		
+  	}
+		ai_will_do = {
+		    base = 0
+		    modifier = {
+		      add = 100
+					power_balance_value = {
+					    id = flx_balance
+					    value < -0.2
+					}
+		    }
+		}
+  	complete_effect = {
+  		set_country_flag = flx_increasing_influence
+  	}
+		remove_effect = {
+			add_power_balance_value = {
+			    id = flx_balance
+			    value = 0.1
+			}
+			add_to_variable = {
+			    var = FLX.chaos
+			    value = -0.05
+			    tooltip = add_to_flx_chaos_tt
+			}
+			clr_country_flag = flx_increasing_influence
+		}
+  }
+  FLX_bop_decision_3 = {
+  	cost = 50
+  	days_re_enable = 30
+  	days_remove = 30
+  	available = {
+	  	not = {
+	  		has_country_flag = flx_increasing_influence
+	  	}	  		
+  	}
+  	complete_effect = {
+  		set_country_flag = flx_increasing_influence
+  	}
+		remove_effect = {
+			add_power_balance_value = {
+			    id = flx_balance
+			    value = -0.05
+			}
+			clr_country_flag = flx_increasing_influence
+		}
+  }
+  FLX_bop_decision_4 = {
+  	cost = 50
+  	days_re_enable = 30
+  	days_remove = 30
+  	available = {
+	  	not = {
+	  		has_country_flag = flx_increasing_influence
+	  	}	  		
+  	}
+  	complete_effect = {
+  		set_country_flag = flx_increasing_influence
+  	}
+		remove_effect = {
+			add_power_balance_value = {
+			    id = flx_balance
+			    value = 0.05
+			}
+			clr_country_flag = flx_increasing_influence
+		}
+  }
+  FLX_bop_decision_5 = {
+  	cost = 50
+  	days_re_enable = 30
+  	days_remove = 30
+  	available = {
+	  	not = {
+	  		has_country_flag = flx_increasing_influence
+	  	}	  		
+  	}
+  	complete_effect = {
+  		set_country_flag = flx_increasing_influence
+  	}
+		remove_effect = {
+			add_days_mission_timeout = {
+			    mission = FLX_huzhua_increase_influence
+			    days = 30
+			}
+			add_days_mission_timeout = {
+			    mission = FLX_mono_increase_influence
+			    days = 30
+			}
+			clr_country_flag = flx_increasing_influence
+		}
+		ai_will_do = {
+		    base = 1000
+		}
+  }
+	FLX_huzhua_increase_influence = {
+	    activation = {
+		    or = {
+		    		country_exists = A05
+		    		country_exists = A28
+		    }
+	      not = {
+	      	has_completed_focus = FLX_Stage_3_politics2
+	      }
+	    }
+	    available = {
+				custom_trigger_tooltip = {
+				    tooltip = not_huzhua_tt		
+				    or = {
+				    	and = {
+					    	not = {
+					    		country_exists = A05
+					    	}
+					    	not = {
+					    		country_exists = A28
+					    	}
+				    	}
+				    	has_completed_focus = FLX_Politics_huzhua2
+				    }
+				}
+	    }
+	    cancel_trigger = {
+		    and = {
+		    	or = {
+			    	not = {
+			    		country_exists = A05
+			    	}
+			    	FLX = {
+			    		has_war_with = A05
+			    	}
+		    	}
+		    	or = {
+			    	not = {
+			    		country_exists = A28
+			    	}
+			    	FLX = {
+			    		has_war_with = A28
+			    	}
+		    	}
+		    }
+	    }
+	    icon = mission_icon     # For GFX_decision_mission_icon
+	    is_good = no
+	    days_mission_timeout = 70
+	    selectable_mission = no
+	    timeout_effect = {
+				random_list = {
+				  2 = {
+						add_power_balance_value = {
+						    id = flx_balance
+						    value = 0.1
+						}
+						add_to_variable = {
+						    var = FLX.chaos
+						    value = -0.05
+						    tooltip = add_to_flx_chaos_tt
+						}
+		        modifier = {
+		            factor = 25
+								power_balance_value = {
+								    id = flx_balance
+								    value > 0.2
+								}
+		        }
+				  }
+				  10 = {
+						add_power_balance_value = {
+						    id = flx_balance
+						    value = 0.05
+						}
+						add_to_variable = {
+						    var = FLX.chaos
+						    value = -0.025
+						    tooltip = add_to_flx_chaos_tt
+						}
+				  }
+				  2 = {
+						add_power_balance_value = {
+						    id = flx_balance
+						    value = 0.02
+						}
+						add_to_variable = {
+						    var = FLX.chaos
+						    value = -0.01
+						    tooltip = micro_add_to_flx_chaos_tt
+						}
+		        modifier = {
+		            factor = 25
+								power_balance_value = {
+								    id = flx_balance
+								    value < -0.2
+								}
+		        }
+				  }
+				}
+
+	    }
+	}
+	FLX_mono_increase_influence = {
+	    activation = {
+	      country_exists = A07
+	      not = {
+	      	has_completed_focus = FLX_Stage_3_politics2
+	      }
+	    }
+	    available = {
+				custom_trigger_tooltip = {
+			    tooltip = not_mono_tt		
+			    or = {
+			    	not = {
+			    		country_exists = A07
+			    	}
+			    	has_completed_focus = FLX_Politics_mono2
+			    }
+				}
+	    }
+	    cancel_trigger = {
+	    	or = {
+		    	not = {
+		    		country_exists = A07
+		    	}
+		    	FLX = {
+		    		has_war_with = A07
+		    	}
+	    	}
+	    }
+	    icon = mission_icon     # For GFX_decision_mission_icon
+	    is_good = no
+	    days_mission_timeout = 70
+	    selectable_mission = no
+	    timeout_effect = {
+				random_list = {
+				  2 = {
+						add_power_balance_value = {
+						    id = flx_balance
+						    value = -0.1
+						}
+						add_to_variable = {
+						    var = FLX.chaos
+						    value = -0.05
+						    tooltip = add_to_flx_chaos_tt
+						}
+		        modifier = {
+		            factor = 25
+								power_balance_value = {
+								    id = flx_balance
+								    value < -0.2
+								}
+		        }
+				  }
+				  10 = {
+						add_power_balance_value = {
+						    id = flx_balance
+						    value = -0.05
+						}
+						add_to_variable = {
+						    var = FLX.chaos
+						    value = -0.025
+						    tooltip = add_to_flx_chaos_tt
+						}
+				  }
+				  2 = {
+						add_power_balance_value = {
+						    id = flx_balance
+						    value = -0.02
+						}
+						add_to_variable = {
+						    var = FLX.chaos
+						    value = -0.01
+						    tooltip = micro_add_to_flx_chaos_tt
+						}
+		        modifier = {
+		            factor = 25
+								power_balance_value = {
+								    id = flx_balance
+								    value > 0.2
+								}
+		        }
+				  }
+				}
+
+	    }
+	}
+}
+FLX_chaos_category = {
+	fight_with_each_other_decision = {
+	    target_root_trigger = {
+	        is_in_faction = no
+	    }
+	  	available = {
+		  	not = {
+		  		has_country_flag = flx_declaring_war
+		  	}	  
+	    	not = {
+	    		has_war_with = FROM
+	    	}	
+	    	is_in_faction = no	
+	  	}
+	    target_array = neighbors
+	    cost = 0
+	    days_remove = 20
+	    war_with_target_on_complete = yes
+	  	complete_effect = {
+	  		set_country_flag = flx_declaring_war
+	  	}
+	    remove_effect = {
+	        declare_war_on = {
+	            target = FROM
+	            type = annex_everything
+	        }
+	        clr_country_flag = flx_declaring_war
+	    }
+	    ai_will_do = {
+	    	base = 0
+		    modifier = {
+		      add = 100
+					strength_ratio = {
+					    tag = FROM
+					    ratio > 1
+					}
+		    }
+		    modifier = {
+		      add = -100
+					any_neighbor_country = {
+						has_war_with = ROOT
+					}
+		    }
+		    modifier = {
+		      add = 100
+					strength_ratio = {
+					    tag = FROM
+					    ratio > 3
+					}
+		    }
+	    }
+	}
+}
+FLX_army_category = {
+	FLX_choose_c_increase_influence = {
+    activation = {
+    	FLX = {
+    		has_completed_focus = FLX_Public_3
+    		not = {
+    			has_country_flag = flx_end_c
+    		}
+    	}
+    	tag = FLX
+    }
+    available = {
+			custom_trigger_tooltip = {
+			    tooltip = not_choose_c_tt		
+			    has_country_flag = flx_end_c
+			}
+    }
+    icon = mission_icon     # For GFX_decision_mission_icon
+    is_good = no
+    days_mission_timeout = 70
+    selectable_mission = no
+    complete_effect = {
+        add_stability = 0.2
+    }
+    timeout_effect = {
+			add_to_variable = {
+			    var = FLX.chaos
+			    value = -0.025
+			    tooltip = add_to_flx_chaos_tt
+			}
+			add_popularity = {
+			    ideology = democratic
+			    popularity = 0.025
+			}
+    }
+	}
+  FLX_bop_decision_6 = {
+  	cost = 50
+  	days_re_enable = 30
+  	days_remove = 30
+  	available = {
+	  	not = {
+	  		has_country_flag = flx_increasing_influence
+	  	}	  		
+	  	tag = FLX
+  	}
+		ai_will_do = {
+		    base = 0
+		    modifier = {
+		      add = 1000
+					democratic > 0.025
+		    }
+		}
+  	complete_effect = {
+  		set_country_flag = flx_increasing_influence
+  	}
+		remove_effect = {
+			add_days_mission_timeout = {
+			    mission = FLX_choose_c_increase_influence
+			    days = 30
+			}
+			add_to_variable = {
+			    var = FLX.chaos
+			    value = 0.025
+			    tooltip = sub_to_flx_chaos_tt
+			}
+			clamp_variable = {
+			    var = FLX.chaos
+			    max = 0
+			}
+			add_popularity = {
+			    ideology = democratic
+			    popularity = -0.025
+			}
+			clr_country_flag = flx_increasing_influence
+		}
+  }
+	flx_chaos_army_decision = {
+    state_target = yes
+    days_remove = 5
+    days_re_enable = 730
+    available = {
+			ROOT = {
+    		has_stability > 0
+    	}
+    	FROM = {
+    		state_population > 20000
+    	}
+    }
+    target_root_trigger = {
+    	
+    }
+    target_trigger = {
+        FROM = {
+            is_controlled_by  = ROOT
+        }
+    }
+    on_map_mode = map_and_decisions_view
+    cost = 50
+    ai_will_do = {
+    	base = 1000
+    }
+    complete_effect = {
+    	add_stability = -0.01
+    	if = {
+    		limit = {
+    			is_ai = yes
+    		}
+    		add_political_power = 100
+    	}
+    	if = {
+    		limit = {
+    			not = {
+    				has_template = "民兵"
+    			}
+    		}
+			ROOT = {
+				division_template = {
+					name = "民兵"				# Represents: German-trained divisions (better equipment than rest),
+					regiments = {					#	and local militia groups.
+						infantry = { x = 0 y = 0 }	# Note: Chinese divisions were brigade-sized compared other nations' armies
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						
+					}
+				}
+				set_division_template_lock = {
+				    division_template = "民兵"
+				    is_locked = yes
+				}
+			}
+
+    	}
+
+    }
+    remove_effect = {
+        FROM = {
+					create_unit = {
+					    division = "name = \"壮丁\" division_template = \"民兵\" start_experience_factor = 0 start_equipment_factor = 1"
+					    owner = ROOT
+					    count = 5
+					}
+        }
+        FROM = {
+        	add_manpower = -20000
+        }
+    }
+	}
+	jiejiao_decision = {
+  	cost = 0
+  	fire_only_once = yes
+  	days_remove = 360
+  	available = {
+	  	owns_state = 614 
+	  	614 = {
+	  		infrastructure < 5
+	  	} 		
+  	}
+    modifier = {
+      civilian_factory_use = 5
+    }
+		ai_will_do = {
+		  base = 10
+		}
+		complete_effect = {
+			614 = {
+				set_victory_points = {
+					province = 4190
+					value = 10
+				}
+			}
+		}
+		remove_effect = {
+			614 = {
+				set_building_level = {
+				    type = infrastructure
+				    level = 5
+				    instant_build = yes
+				}
+			}
+			set_province_name = { id = 4190 name = SHIJIAZHUANG }
+		}
+	}
+	flx_anti_usa_decision = {
+    state_target = yes
+    days_remove = 20
+    target_root_trigger = {
+			tag = FLX
+			has_completed_focus = FLX_Stage_2_politics3
+    }
+    available = {
+    	command_power > 20
+	  	not = {
+	  		has_country_flag = flx_anti_usa
+	  	}	
+	  	not = {
+	  		has_war_with = USA
+	  	}
+    }
+    target_trigger = {
+      FROM = {
+      	any_neighbor_state = {
+      		 is_owned_by = ROOT
+      	}
+      	not = {
+      		is_owned_by = ROOT
+      	}
+      }
+    }
+    target_array = USA.core_states
+    on_map_mode = map_and_decisions_view
+    cost = 0
+    ai_will_do = {
+    	base = 1000
+    }
+    war_with_on_remove = USA
+    complete_effect = {
+    	add_command_power = -20
+    	if = {
+    		limit = {
+    			not = {
+    				has_variable = flx_anti_usa_var
+    			}
+    		}
+    		set_variable = { flx_anti_usa_var = 0 }
+    	}
+			set_country_flag = flx_anti_usa
+    }
+    remove_effect = {
+    	clr_country_flag = flx_anti_usa
+    	random_list = {
+    		5 = {
+		      FROM = {
+						transfer_state_to = FLX
+						add_core_of = FLX
+		      }
+	        modifier = {
+            add = -1
+						check_variable = {
+						    flx_anti_usa_var > 0
+						}
+	        }
+	        modifier = {
+            add = -1
+						check_variable = {
+						    flx_anti_usa_var > 1
+						}
+	        }
+	        modifier = {
+            add = -1
+						check_variable = {
+						    flx_anti_usa_var > 2
+						}
+	        }
+	        modifier = {
+            add = -1
+						check_variable = {
+						    flx_anti_usa_var > 3
+						}
+	        }
+	        modifier = {
+            add = -1
+						check_variable = {
+						    flx_anti_usa_var > 4
+						}
+	        }
+	        
+    		}
+    		0 = {
+		      USA = {
+		        declare_war_on = {
+		            target = FLX
+		            type = annex_everything
+		        }
+		      }
+	        modifier = {
+            add = flx_anti_usa_var
+						check_variable = {
+						    flx_anti_usa_var > 0
+						}
+	        }
+    		}
+    	}
+			add_to_variable = { flx_anti_usa_var = 1 }
+    }
+	}
+	flx_attack_usa_decision = {
+  	cost = 0
+  	fire_only_once = yes
+  	days_remove = 180
+  	visible = {
+			tag = FLX
+			has_completed_focus = FLX_Stage_2_politics3 		
+  	}
+  	war_with_on_complete = USA
+		targeted_modifier = {
+		    tag = USA
+		    attack_bonus_against = 0.2
+		    defense_bonus_against = 0.2
+		}
+		ai_will_do = {
+		  base = 0
+		}
+		complete_effect = {
+      FLX = {
+        declare_war_on = {
+            target = USA
+            type = annex_everything
+        }
+      }
+		}
+		remove_effect = {
+
+		}
+	}
+
+}
+FLX_lsw_category = {
+	FLX_draw_lsw = {
+    activation = {
+			always = no
+    }
+    available = {
+			LSW = {
+				is_in_faction = yes
+			}
+    }
+    cancel_trigger = {
+    	not = {
+		    LSW = {
+					has_country_leader = {
+					    name = "雷绍武"
+					    ruling_only = yes
+					}
+		    }
+    	}
+    }
+    icon = mission_icon     # For GFX_decision_mission_icon
+    is_good = yes
+    days_mission_timeout = 360
+    selectable_mission = no
+    complete_effect = {
+
+    }
+    timeout_effect = {
+			random_list = {
+				0 = {#xll
+					FLX = { add_to_faction = LSW }
+	        modifier = {
+	            add = FLX.lsw_likes_xll
+	            check_variable = {FLX.lsw_likes_xll > 10}
+	        }
+	        modifier = {
+	            add = -10
+	            check_variable = {FLX.lsw_likes_xll > 10}
+	        }
+				}
+				0 = {#huzhua
+					if = {
+						limit = {
+							A05 = {is_faction_leader = yes}
+						}
+						A05 = { add_to_faction = LSW }
+					}
+					if = {
+						limit = {
+							A28 = {is_faction_leader = yes}
+						}
+						A28 = { add_to_faction = LSW }
+					}
+					if = {
+						limit = {
+							FLX = {has_government = communism}
+						}
+						FLX = { add_to_faction = LSW }
+					}
+	        modifier = {
+	            add = FLX.lsw_likes_huzhua
+	            check_variable = {FLX.lsw_likes_huzhua > 10}
+	        }
+	        modifier = {
+	            add = -10
+	            check_variable = {FLX.lsw_likes_huzhua > 10}
+	        }
+				}
+				0 = {#mono
+					if = {
+						limit = {
+							A07 = {is_faction_leader = yes}
+						}
+						A07 = { add_to_faction = LSW }
+					}
+					if = {
+						limit = {
+							FLX = {has_government = fascism}
+						}
+						FLX = { add_to_faction = LSW }
+					}
+	        modifier = {
+	            add = FLX.lsw_likes_mono
+	            check_variable = {FLX.lsw_likes_mono > 10}
+	        }
+	        modifier = {
+	            add = -10
+	            check_variable = {FLX.lsw_likes_mono > 10}
+	        }
+				}
+				0 = {#c
+					if = {
+						limit = {
+							A19 = {is_faction_leader = yes}
+						}
+						A19 = { add_to_faction = LSW }
+					}
+	        modifier = {
+	            add = FLX.lsw_likes_c
+	            check_variable = {FLX.lsw_likes_c > 10}
+	        }
+	        modifier = {
+	            add = -10
+	            check_variable = {FLX.lsw_likes_c > 10}
+	        }
+				}
+				20 = {#don't join
+					
+				}
+			}
+    }
+	}
+	FLX_draw_lsw_decision = {
+  	cost = 100
+  	days_remove = 15
+		ai_will_do = {
+		  base = 0
+		}
+		complete_effect = {
+
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					PREV = {
+						has_government = neutrality
+					}
+				}
+	      FLX = {
+	        add_to_variable = { lsw_likes_xll = 3 }
+	      }
+	      custom_effect_tooltip = lsw_likes_xll_tt
+			}
+			if = {
+				limit = {
+					PREV = {
+						has_government = communism
+					}
+				}
+	      FLX = {
+	        add_to_variable = { lsw_likes_huzhua = 3 }
+	      }
+	      custom_effect_tooltip = lsw_likes_huzhua_tt
+			}
+			if = {
+				limit = {
+					PREV = {
+						has_government = fascism 
+					}
+				}
+	      FLX = {
+	        add_to_variable = { lsw_likes_mono = 3 }
+	      }
+	      custom_effect_tooltip = lsw_likes_mono_tt
+			}
+			if = {
+				limit = {
+					PREV = {
+						has_government = democratic
+					}
+				}
+	      FLX = {
+	        add_to_variable = { lsw_likes_c = 3 }
+	      }
+	      custom_effect_tooltip = lsw_likes_c_tt
+			}
+		}
+	}
+	FLX_kill_lsw_decision = {
+  	cost = 0
+  	days_remove = 15
+		ai_will_do = {
+		  base = 0
+      modifier = {
+	      add = 10
+	      has_government = fascism
+      }
+		}
+		complete_effect = {
+			add_stability = -0.05
+		}
+    modifier = {
+      civilian_factory_use = 10
+    }
+		remove_effect = {
+			set_country_flag = kill_lsw
+			add_to_variable = {
+			    var = LSW.health
+			    value = -0.5
+			    tooltip = most_sub_to_lsw_health_tt
+			}
+			if = {
+				limit = {
+					PREV = {
+						has_government = neutrality
+					}
+				}
+	      FLX = {
+	        add_to_variable = { lsw_likes_xll = -100 }
+	      }
+			}
+			if = {
+				limit = {
+					PREV = {
+						has_government = communism
+					}
+				}
+	      FLX = {
+	        add_to_variable = { lsw_likes_huzhua = -100 }
+	      }
+			}
+			if = {
+				limit = {
+					PREV = {
+						has_government = fascism 
+					}
+				}
+	      FLX = {
+	        add_to_variable = { lsw_likes_mono = -100 }
+	      }
+			}
+			if = {
+				limit = {
+					PREV = {
+						has_government = democratic
+					}
+				}
+	      FLX = {
+	        add_to_variable = { lsw_likes_c = -100 }
+	      }
+			}
+		}
+	}
+}
+FLX_massacre_category = {
+	flx_massacre_decision = {
+    state_target = yes
+    days_remove = 20
+    target_root_trigger = {
+			tag = FLX
+			has_completed_focus = FLX_after_chaos_C3
+    }
+    available = {
+    	command_power > 20
+	  	has_manpower > 1000
+    }
+    target_trigger = {
+      FROM = {
+      	is_fully_controlled_by = ROOT
+      	not = {
+      		is_core_of = ROOT
+      	}
+      	not = {
+      		has_state_flag = massacre_flag
+      	}
+      }
+    }
+    on_map_mode = map_and_decisions_view
+    cost = 0
+    ai_will_do = {
+    	base = 1000
+    }
+    complete_effect = {
+    	add_command_power = -20
+    	add_manpower = -1000
+  		FROM = {
+				set_variable = { massacre_population = state_population }
+				divide_variable = { massacre_population = -60 }
+  		}
+
+    }
+    remove_effect = {
+    	FROM = {
+    		set_state_flag = massacre_flag
+    		add_manpower = massacre_population
+				add_state_modifier = {
+			    modifier = {
+			       resistance_growth = -0.5
+			       resistance_target = -0.3
+			    }
+				}
+    	}
+    	random_list = {
+    		5 = {
+					every_country = {
+						limit = {
+							FROM = {
+								is_core_of = PREV
+							}
+						}
+						if = {
+							limit = {
+								FROM = {
+									state_population > 10000
+								}
+							}
+							add_war_support = -0.02
+						}
+						if = {
+							limit = {
+								FROM = {
+									state_population > 100000
+								}
+							}
+							add_war_support = -0.03
+						}
+						if = {
+							limit = {
+								FROM = {
+									state_population > 1000000
+								}
+							}
+							add_war_support = -0.05
+						}
+						if = {
+							limit = {
+								FROM = {
+									state_population > 10000000
+								}
+							}
+							add_war_support = -0.1
+						}
+						
+					}
+	        modifier = {
+            add = 5
+						FROM = {
+							any_country_with_core = {
+								has_war_support < 0
+							}
+						}
+	        }
+    		}
+    		0 = {
+					every_country = {
+						limit = {
+							FROM = {
+								is_core_of = PREV
+							}
+						}
+						if = {
+							limit = {
+								FROM = {
+									state_population > 10000
+								}
+							}
+							add_war_support = 0.02
+						}
+						if = {
+							limit = {
+								FROM = {
+									state_population > 100000
+								}
+							}
+							add_war_support = 0.03
+						}
+						if = {
+							limit = {
+								FROM = {
+									state_population > 1000000
+								}
+							}
+							add_war_support = 0.05
+						}
+						if = {
+							limit = {
+								FROM = {
+									state_population > 10000000
+								}
+							}
+							add_war_support = 0.1
+						}
+						
+					}
+	        modifier = {
+            add = 5
+						FROM = {
+							any_country_with_core = {
+								has_war_support > 0
+							}
+						}
+	        }
+    		}
+    	}
+			add_to_variable = { flx_anti_usa_var = 1 }
+    }
+	}
+}

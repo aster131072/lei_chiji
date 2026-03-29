@@ -952,7 +952,127 @@ FLX = {
 	color = rgb { 0 85 255 }
 	color_ui = rgb { 255 255 255 }
 }
+A01 = {
+	color = rgb { 255 165 0 }
+	color_ui = rgb { 255 255 255 }
+}
+A02 = {
+	color = rgb { 	46 139 87 }
+	color_ui = rgb { 255 255 255 }
+}
+A03 = {
+	color = rgb { 75 0 130 }
+	color_ui = rgb { 255 255 255 }
+}
+A04 = {
+	color = rgb { 	245 255 250 }
+	color_ui = rgb { 255 255 255 }
+}
+A05 = {
+	color = rgb { 	199 21 133 }
+	color_ui = rgb { 255 255 255 }
+}
 A06 = {
 	color = rgb { 0 0 0 }
+	color_ui = rgb { 255 255 255 }
+}
+A07 = {
+	color = rgb { 	0 255 255 }
+	color_ui = rgb { 255 255 255 }
+}
+A08 = {
+	color = rgb { 138 43 226 }
+	color_ui = rgb { 255 255 255 }
+}
+A09 = {
+	color = rgb { 	205 133 63 }
+	color_ui = rgb { 255 255 255 }
+}
+A10 = {
+	color = rgb { 	250 128 114 }
+	color_ui = rgb { 255 255 255 }
+}
+A11 = {
+	color = rgb { 	60 179 113 }
+	color_ui = rgb { 255 255 255 }
+}
+A12 = {
+	color = rgb { 	143 188 143 }
+	color_ui = rgb { 255 255 255 }
+}
+A13 = {
+	color = rgb { 	255 99 71 }
+	color_ui = rgb { 255 255 255 }
+}
+A14 = {
+	color = rgb { 	210 105 30 }
+	color_ui = rgb { 255 255 255 }
+}
+A15 = {
+	color = rgb { 	128 0 128 }
+	color_ui = rgb { 255 255 255 }
+}
+A16 = {
+	color = rgb { 	255 192 203 }
+	color_ui = rgb { 255 255 255 }
+}
+A17 = {
+	color = rgb { 	255 105 180 }
+	color_ui = rgb { 255 255 255 }
+}
+A18 = {
+	color = rgb { 189 183 107 }
+	color_ui = rgb { 255 255 255 }
+}
+A19 = {
+	color = rgb { 	255 255 0 }
+	color_ui = rgb { 255 255 255 }
+}
+A20 = {
+	color = rgb { 255 69 0 }
+	color_ui = rgb { 255 255 255 }
+}
+A21 = {
+	color = rgb { 	47 79 79 }
+	color_ui = rgb { 255 255 255 }
+}
+A22 = {
+	color = rgb { 	169 169 169 }
+	color_ui = rgb { 255 255 255 }
+}
+A23 = {
+	color = rgb { 30 144 255 }
+	color_ui = rgb { 255 255 255 }
+}
+A24 = {
+	color = rgb { 	0 191 255 }
+	color_ui = rgb { 255 255 255 }
+}
+A25 = {
+	color = rgb { 	220 220 220 }
+	color_ui = rgb { 255 255 255 }
+}
+A26 = {
+	color = rgb { 	188 143 143 }
+	color_ui = rgb { 255 255 255 }
+}
+A27 = {
+	color = rgb {	165 42 42 }
+	color_ui = rgb { 255 255 255 }
+}
+A28 = {
+	color = rgb {	139 69 19 }
+	color_ui = rgb { 255 255 255 }
+}
+A29 = {
+	color = rgb {	65 105 225 }
+	color_ui = rgb { 255 255 255 }
+}
+A30 = {
+	color = rgb {	25 25 112 }
+	color_ui = rgb { 255 255 255 }
+}
+A31 = {
+	color = rgb {	128 128 0 }
 	color_ui = rgb { 255 255 255 }
 }

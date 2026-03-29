@@ -13,7 +13,7 @@
 	
 	default = no
 	
-	continuous_focus_position = { x = 50 y = 3000 }
+	continuous_focus_position = { x = 100 y = 200 }
 
 	focus = {
 		id = FLX_Army_1
@@ -25,7 +25,7 @@
 		bypass = {
 		}
 		
-		cost = 30
+		cost = 3
 		#prerequisite = { focus = AST_workers_paradise }
 
 		cancel_if_invalid = yes
@@ -60,10 +60,6 @@
 						infantry = { x = 4 y = 3 }
 						
 					}
-				}
-				set_division_template_lock = {
-				    division_template = "FUTURE"
-				    is_locked = yes
 				}
 			}
 
@@ -132,7 +128,7 @@
 		bypass = {
 		}
 		
-		cost = 30
+		cost = 3
 		prerequisite = { 
 			focus = FLX_Army_1
 		}
@@ -148,6 +144,10 @@
 		}
 		completion_reward = {
 			create_faction = ANTI_LEI_FACTION
+			set_power_balance = {
+			    id = flx_balance
+			    set_default = yes
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -166,7 +166,7 @@
 		bypass = {
 		}
 		
-		cost = 30
+		cost = 3
 		prerequisite = { 
 			focus = FLX_Public_1
 		}
@@ -274,9 +274,3552 @@
 			593 = {
 				set_demilitarized_zone = yes
 			}#食雪大将军A26
+			615 = {
+				set_demilitarized_zone = yes
+			}
+			845 = {
+				set_demilitarized_zone = yes
+			}
+			748 = {
+				set_demilitarized_zone = yes
+			}
 		}
 		ai_will_do = {
 			factor = 1
 		}
 	}
+	focus = {
+		id = FLX_Public_3
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = FLX_Public_2
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = FLX_Public_2
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			328 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A01
+				add_core_of = A01
+			}#死老鼠A01
+			610 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A02
+				add_core_of = A02
+			}#熊猫A02
+			716 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A03
+				add_core_of = A03
+			}#紫菀A03
+			745 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A04
+				add_core_of = A04
+			}#跳跳糖国A04
+			617 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A05
+				add_core_of = A05
+			}#虎A05
+			619 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A05
+				add_core_of = A05
+			}#虎A05
+			287 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A06
+				add_core_of = A06
+			}#雷吧选CA06
+			759 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A06
+				add_core_of = A06
+			}#雷吧选C
+			602 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A07
+				add_core_of = A07
+			}#莫诺A07
+			608 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A08
+				add_core_of = A08
+			}#小行星国A08
+			609 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A09
+				add_core_of = A09
+			}#百裂冲击A09
+			604 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A10
+				add_core_of = A10
+			}#氢氦国A10
+			755 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A10
+				add_core_of = A10
+			}#氢氦国
+			597 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A11
+				add_core_of = A11
+			}#神人国A11
+			743 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A11
+				add_core_of = A11
+			}#神人国
+			595 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A12
+				add_core_of = A12
+			}#智齿国A12
+			592 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A13
+				add_core_of = A13
+			}#原神国A13
+			165 = {
+				set_demilitarized_zone = no
+				#transfer_state_to = A14
+				add_core_of = A14
+			}#巴萨等你复兴A14
+			533 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A15
+				add_core_of = A15
+			}#厄诡椪国A15
+			531 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A16
+				add_core_of = A16
+			}#二次元坚果A16
+			715 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A17
+				add_core_of = A17
+			}#洛樱A17
+			598 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A18
+				add_core_of = A18
+			}#银海A18
+			614 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A19
+				add_core_of = A19
+			}#街角A19
+			611 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A20
+				add_core_of = A20
+			}#米米世界A20
+			606 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A21
+				add_core_of = A21
+			}#面包狗A21
+			283 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A22
+				add_core_of = A22
+			}#柯斯丘什科A22
+			616 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A22
+				add_core_of = A22
+			}#柯斯丘什科
+			613 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A23
+				add_core_of = A23
+			}#南冰洋A23
+			594 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A24
+				add_core_of = A24
+			}#南滑A24
+			591 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A25
+				add_core_of = A25
+			}#猴督A25
+			593 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A26
+				add_core_of = A26
+			}#食雪大将军A26
+			615 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A27
+				add_core_of = A27
+			}#ayyaA27
+			845 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A28
+				add_core_of = A28
+			}#欧洲联合大学A28
+			748 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A30
+				add_core_of = A30
+			}#园长国A30
+			596 = {
+				set_demilitarized_zone = no
+				transfer_state_to = A31
+				add_core_of = A31
+			}#甜辛国A31
+			FLX = {add_to_faction = A01} 
+			FLX = {add_to_faction = A02} 
+			FLX = {add_to_faction = A03} 
+			FLX = {add_to_faction = A04} 
+			FLX = {add_to_faction = A05} 
+			FLX = {add_to_faction = A07} 
+			FLX = {add_to_faction = A08} 
+			FLX = {add_to_faction = A09} 
+			FLX = {add_to_faction = A10} 
+			FLX = {add_to_faction = A12} 
+			FLX = {add_to_faction = A13} 
+			FLX = {add_to_faction = A14} 
+			FLX = {add_to_faction = A15} 
+			FLX = {add_to_faction = A16} 
+			FLX = {add_to_faction = A17} 
+			FLX = {add_to_faction = A24} 
+			FLX = {add_to_faction = A25} 
+			FLX = {add_to_faction = A26} 
+			FLX = {add_to_faction = A27} 
+			FLX = {add_to_faction = A28} 
+			FLX = {add_to_faction = A30} 
+			FLX = {add_to_faction = A31}
+			FLX = {
+				set_variable = {
+				    var = chaos
+				    value = 0
+				    tooltip = flx_set_chaos_tt
+				}
+		    add_dynamic_modifier = {
+		        modifier = FLX_chaos
+		        scope = FLX
+		    }
+			}
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Politics_mono
+		icon = GFX_goal_generic_political_pressure
+		x = -4
+		y = 1
+		relative_position_id = FLX_Public_3
+		
+		available = {
+			has_country_leader = {
+			    name = "旋律蓝"
+			    ruling_only = yes
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = FLX_Public_3
+		}
+		mutually_exclusive = {
+			focus = FLX_Politics_xll
+			focus = FLX_Politics_huzhua 
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			add_power_balance_value = {
+			    id = flx_balance
+			    value = -0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Politics_xll
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = FLX_Public_3
+		
+		available = {
+			has_country_leader = {
+			    name = "旋律蓝"
+			    ruling_only = yes
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = FLX_Public_3
+		}
+		mutually_exclusive = {
+			focus = FLX_Politics_mono
+			focus = FLX_Politics_huzhua 
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			add_to_variable = {
+			    var = FLX.chaos
+			    value = 0.05
+			    tooltip = sub_to_flx_chaos_tt
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Politics_huzhua
+		icon = GFX_goal_generic_political_pressure
+		x = 4
+		y = 1
+		relative_position_id = FLX_Public_3
+		
+		available = {
+			has_country_leader = {
+			    name = "旋律蓝"
+			    ruling_only = yes
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = FLX_Public_3
+		}
+		mutually_exclusive = {
+			focus = FLX_Politics_mono
+			focus = FLX_Politics_xll 
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			add_power_balance_value = {
+			    id = flx_balance
+			    value = 0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Politics_mono1
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = FLX_Politics_mono
+		
+		available = {
+			has_country_leader = {
+			    name = "旋律蓝"
+			    ruling_only = yes
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { 
+			focus = FLX_Politics_mono
+		}
+		mutually_exclusive = {
+
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			add_power_balance_modifier = {
+			    id = flx_balance    # The ID of the balance of power
+			    modifier = flx_mono_modifier # The modifier to add
+			}
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Politics_mono2
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = FLX_Politics_mono1
+		
+		available = {
+			power_balance_value = {
+			    id = flx_balance
+			    value < -0.75
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { 
+			focus = FLX_Politics_mono1
+		}
+		mutually_exclusive = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			A07 = {
+				every_core_state = {
+					add_core_of = FLX
+				}
+			}
+			FLX = {
+				annex_country = {
+				    target = A07
+				    transfer_troops = yes
+				}
+			}
+			set_politics = {
+			  ruling_party = fascism
+			}
+			remove_power_balance = {
+			    id = flx_balance
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Politics_mono3
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = FLX_Politics_mono2
+		
+		available = {
+			has_war_with = A19
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = FLX_Politics_mono2
+		}
+		mutually_exclusive = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					is_in_faction_with = FLX
+				}
+				add_timed_idea = {
+				    idea = FLX_mono_c
+				    days = 180
+				}
+			}
+			add_timed_idea = {
+			    idea = FLX_mono_c
+			    days = 360
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Politics_mono_xll
+		icon = GFX_goal_generic_political_pressure
+		x = -2
+		y = 1
+		relative_position_id = FLX_Politics_xll
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { 
+			focus = FLX_Politics_mono
+			focus = FLX_Politics_xll	
+		}
+		mutually_exclusive = {
+
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			add_power_balance_value = {
+			    id = flx_balance
+			    value = -0.2
+			}
+			add_to_variable = {
+			    var = FLX.chaos
+			    value = -0.1
+			    tooltip = super_add_to_flx_chaos_tt
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	focus = {
+		id = FLX_Politics_destroy_huzhua
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = FLX_Politics_mono_xll
+		
+		available = {
+			power_balance_value = {
+			    id = flx_balance
+			    value < -0.6
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { 
+			focus = FLX_Politics_mono_xll
+		}
+		mutually_exclusive = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			custom_effect_tooltip = FLX_destroy_huzhua_tt
+			A05 = {
+				kill_country_leader = yes
+			}
+			FLX = {
+				puppet = {
+				    target = A05
+				    end_wars = no
+				}
+				puppet = {
+				    target = A28
+				    end_wars = no
+				}
+			}
+			add_to_variable = {
+			    var = FLX.chaos
+			    value = -0.2
+			    tooltip = super_add_to_flx_chaos_tt
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Politics_xll1
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = FLX_Politics_xll
+		
+		available = {
+			has_country_leader = {
+			    name = "旋律蓝"
+			    ruling_only = yes
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { 
+			focus = FLX_Politics_xll
+		}
+		mutually_exclusive = {
+
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			add_popularity = {
+			    ideology = neutrality
+			    popularity = 0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Politics_xll2
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = FLX_Politics_xll1
+		
+		available = {
+			has_country_leader = {
+			    name = "旋律蓝"
+			    ruling_only = yes
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { 
+			focus = FLX_Politics_xll1
+		}
+		mutually_exclusive = {
+
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+
+		}
+		completion_reward = {
+			every_country = {
+				limit = {
+					is_in_faction_with = FLX
+				}
+			  add_to_tech_sharing_group = flx_research_sharing
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Politics_huzhua_xll
+		icon = GFX_goal_generic_political_pressure
+		x = -2
+		y = 1
+		relative_position_id = FLX_Politics_huzhua
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { 
+			focus = FLX_Politics_huzhua
+			focus = FLX_Politics_xll
+		}
+		mutually_exclusive = {
+
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			add_power_balance_value = {
+			    id = flx_balance
+			    value = 0.2
+			}
+			add_to_variable = {
+			    var = FLX.chaos
+			    value = -0.1
+			    tooltip = super_add_to_flx_chaos_tt
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	focus = {
+		id = FLX_Politics_destroy_mono
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = FLX_Politics_huzhua_xll
+		
+		available = {
+			power_balance_value = {
+			    id = flx_balance
+			    value > 0.6
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { 
+			focus = FLX_Politics_huzhua_xll
+		}
+		mutually_exclusive = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			custom_effect_tooltip = FLX_destroy_mono_tt
+			A07 = {
+				kill_country_leader = yes
+			}
+			FLX = {
+				puppet = {
+				    target = A07
+				    end_wars = no
+				}
+			}
+			add_to_variable = {
+			    var = FLX.chaos
+			    value = -0.2
+			    tooltip = super_add_to_flx_chaos_tt
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Politics_huzhua1
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = FLX_Politics_huzhua
+		
+		available = {
+			has_country_leader = {
+			    name = "旋律蓝"
+			    ruling_only = yes
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { 
+			focus = FLX_Politics_huzhua
+		}
+		mutually_exclusive = {
+
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			add_power_balance_modifier = {
+			    id = flx_balance    # The ID of the balance of power
+			    modifier = flx_huzhua_modifier # The modifier to add
+			}
+			add_popularity = {
+			    ideology = communism
+			    popularity = 0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Politics_huzhua2
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = FLX_Politics_huzhua1
+		
+		available = {
+			power_balance_value = {
+			    id = flx_balance
+			    value > 0.75
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { 
+			focus = FLX_Politics_huzhua1
+		}
+		mutually_exclusive = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			A05 = {
+				every_core_state = {
+					add_core_of = FLX
+				}
+			}
+			A28 = {
+				every_core_state = {
+					add_core_of = FLX
+				}
+			}
+			FLX = {
+				annex_country = {
+				    target = A05
+				    transfer_troops = yes
+				}
+				annex_country = {
+				    target = A28
+				    transfer_troops = yes
+				}
+			}
+			set_politics = {
+			  ruling_party = communism
+			}
+			remove_power_balance = {
+			    id = flx_balance
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Politics_huzhua3
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = FLX_Politics_huzhua2
+		
+		available = {
+			has_war_with = A19
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { 
+			focus = FLX_Politics_huzhua2
+		}
+		mutually_exclusive = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		select_effect = {
+			
+		}
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					is_in_faction_with = FLX
+				}
+				add_timed_idea = {
+				    idea = FLX_huzhua_c
+				    days = 180
+				}
+			}
+			add_timed_idea = {
+			    idea = FLX_huzhua_c
+			    days = 360
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_1_army1
+		icon = GFX_goal_generic_small_arms
+		x = -2
+		y = 1
+		relative_position_id = FLX_Politics_xll2
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { 
+			focus = FLX_Politics_huzhua2
+			focus = FLX_Politics_xll2
+			focus = FLX_Politics_mono2
+		}
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		select_effect = {
+
+		}
+		completion_reward = {
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			navy_experience = 25
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					any_owned_state = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_state = {
+					limit = {
+						controller = { tag = ROOT }
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+			}		
+			air_experience = 25
+
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_1_army2
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_1_army1
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_1_army1 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		select_effect = {
+
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 1.0
+				technology = motorised_infantry
+			}
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1.0
+				uses = 2
+				category = light_fighter
+				category = cat_heavy_fighter
+			}
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 1.0
+				uses = 2
+				category = cat_strategic_bomber
+				category = tactical_bomber
+			}
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = ss_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_1_army3
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_1_army2
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_1_army2 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		select_effect = {
+
+		}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = naval_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_1_industry1
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		relative_position_id = FLX_Politics_xll2
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { 
+			focus = FLX_Politics_huzhua2
+			focus = FLX_Politics_xll2
+			focus = FLX_Politics_mono2
+		}
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		select_effect = {
+
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_1_industry2
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_1_industry1
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_1_industry1 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		select_effect = {
+
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_1_industry3
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_1_industry2
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_1_industry2 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		select_effect = {
+
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_1_politics1
+		icon = GFX_goal_generic_demand_territory
+		x = 2
+		y = 1
+		relative_position_id = FLX_Politics_xll2
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { 
+			focus = FLX_Politics_huzhua2
+			focus = FLX_Politics_xll2
+			focus = FLX_Politics_mono2
+		}
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		select_effect = {
+
+		}
+		completion_reward = {
+			add_political_power = 300
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_1_politics2
+		icon = GFX_goal_generic_demand_territory
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_1_politics1
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_1_politics1 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		select_effect = {
+
+		}
+		completion_reward = {
+			set_rule = { can_send_volunteers = yes }
+			add_ideas = FLX_volunteer2 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_1_politics3
+		icon = GFX_goal_generic_demand_territory
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_1_politics2
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_1_politics2 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		select_effect = {
+
+		}
+		completion_reward = {
+			add_ideas = militarism_focus
+			add_ideas = deterrence
+			add_ideas = idea_political_correctness
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_1_end
+		icon = GFX_focus_NORDIC_mon_research
+		x = -2
+		y = 1
+		relative_position_id = FLX_Stage_1_politics3
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { focus = FLX_Stage_1_army3 }
+		prerequisite = { focus = FLX_Stage_1_industry3 }
+		prerequisite = { focus = FLX_Stage_1_politics3 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		select_effect = {
+
+		}
+		completion_reward = {
+			add_research_slot = 1
+			modify_tech_sharing_bonus = {
+			    id = flx_research_sharing
+			    bonus = 0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_2
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_1_end
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { focus = FLX_Stage_1_end }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		select_effect = {
+
+		}
+		completion_reward = {
+			swap_ideas = {
+			    remove_idea = HuangTianBa
+			    add_idea = HuangTianBa2
+			}
+			add_ideas = military_youth_focus
+			add_ideas = paramilitarism_focus
+			add_ideas = indoctrination_focus
+			add_ideas = political_commissars_focus
+			add_ideas = why_we_fight_focus
+			add_ideas = ideological_fanaticism_focus
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = FLX_Stage_2_army1
+		icon = GFX_goal_generic_small_arms
+		x = -2
+		y = 1
+		relative_position_id = FLX_Stage_2
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_2 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		select_effect = {
+
+		}
+		completion_reward = {
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			navy_experience = 25
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					any_owned_state = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_state = {
+					limit = {
+						controller = { tag = ROOT }
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+			}		
+			air_experience = 25
+
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_2_army2
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_2_army1
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_2_army1 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		select_effect = {
+
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+			add_equipment_to_stockpile = { 
+				type = motorized_equipment
+				amount = 100
+			}
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = cas_bomber
+			}
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = naval_bomber
+			}
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_2_army3
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_2_army2
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_2_army2 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		select_effect = {
+
+		}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = naval_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_2_industry1
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_2
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_2 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		select_effect = {
+
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 2
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 2
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_2_industry2
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_2_industry1
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_2_industry1 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		select_effect = {
+
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 2
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 2
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_2_industry3
+		icon = GFX_focus_generic_provoke_border_clashes
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_2_industry2
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_2_industry2 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		select_effect = {
+
+		}
+		completion_reward = {
+			every_controlled_state = {
+				set_building_level = {
+				    type = bunker
+				    level = 4
+				    province = {
+				        all_provinces = yes
+				        limit_to_border = yes
+				        level < 4
+				    }
+				}
+			}
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_2_politics1
+		icon = GFX_goal_generic_demand_territory
+		x = 2
+		y = 1
+		relative_position_id = FLX_Stage_2
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_2 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		select_effect = {
+
+		}
+		completion_reward = {
+			activate_mission = FLX_draw_lsw
+			custom_effect_tooltip = flx_lsw_tt
+			set_variable = { lsw_likes_xll = 5 }
+			set_variable = { lsw_likes_huzhua = 10 }
+			set_variable = { lsw_likes_mono = 0 }
+			set_variable = { lsw_likes_c = 15 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_2_politics2
+		icon = GFX_goal_generic_demand_territory
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_2_politics1
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_2_politics1 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		select_effect = {
+
+		}
+		completion_reward = {
+			declare_war_on = {
+		    target = A19
+		    type = annex_everything
+			}
+			will_lead_to_war_with = A19
+			add_ideas = FLX_yongbu
+			set_rule = { can_use_kamikaze_pilots = yes }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_2_politics3
+		icon = GFX_goal_generic_demand_territory
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_2_politics2
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_2_politics2 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		select_effect = {
+
+		}
+		completion_reward = {
+			custom_effect_tooltip = flx_anti_usa_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_2_end
+		icon = GFX_focus_NORDIC_mon_research
+		x = -2
+		y = 1
+		relative_position_id = FLX_Stage_2_politics3
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { focus = FLX_Stage_2_army3 }
+		prerequisite = { focus = FLX_Stage_2_industry3 }
+		prerequisite = { focus = FLX_Stage_2_politics3 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		select_effect = {
+
+		}
+		completion_reward = {
+			add_research_slot = 1
+			modify_tech_sharing_bonus = {
+			    id = flx_research_sharing
+			    bonus = 0.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_3
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_2_end
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { focus = FLX_Stage_2_end }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		select_effect = {
+
+		}
+		completion_reward = {
+			FLX = {
+				remove_from_faction = LSW
+			}
+			declare_war_on = {
+			    target = LSW
+			    type = annex_everything
+			}
+			will_lead_to_war_with = LSW
+			add_ideas = {
+				FLX_qianggong
+			}
+			add_ideas = {
+				FLX_zhenya
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_3_army1
+		icon = GFX_goal_generic_small_arms
+		x = -2
+		y = 1
+		relative_position_id = FLX_Stage_3
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_3 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		select_effect = {
+
+		}
+		completion_reward = {
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			navy_experience = 25
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					any_owned_state = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_state = {
+					limit = {
+						controller = { tag = ROOT }
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+			}		
+			air_experience = 25
+
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_3_army2
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_3_army1
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_3_army1 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		select_effect = {
+
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 2
+				category = armor
+			}
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = marines
+				technology = marines2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = dd_tech
+			}
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+				category = cv_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_3_army3
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_3_army2
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_3_army2 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		select_effect = {
+
+		}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = naval_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_3_industry1
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_3
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_3 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		select_effect = {
+
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 3
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 3
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_3_industry2
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_3_industry1
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_3_industry1 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		select_effect = {
+
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 3
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 3
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_3_industry3
+		icon = GFX_focus_wonderweapons
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_3_industry2
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_3_industry2 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		select_effect = {
+
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = nuclear_bonus
+				ahead_reduction = 2
+				bonus = 1
+				uses = 2
+				category = nuclear
+			}
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 1
+				uses = 4
+				category = electronics
+				category = rocketry
+			}
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 2
+				uses = 4
+				category = jet_technology
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_3_politics1
+		icon = GFX_goal_generic_demand_territory
+		x = 2
+		y = 1
+		relative_position_id = FLX_Stage_3
+		
+		available = {
+			not = {
+				country_exists = A19
+			}
+			not = {
+				country_exists = A06
+			}
+			not = {
+				country_exists = A22
+			}
+			not = {
+				country_exists = A20
+			}
+			not = {
+				country_exists = A11
+			}
+			not = {
+				country_exists = A18
+			}
+			not = {
+				country_exists = A21
+			}
+			not = {
+				country_exists = A23
+			}
+			
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_3 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		select_effect = {
+
+		}
+		completion_reward = {
+			set_country_flag = flx_end_c
+			custom_effect_tooltip = flx_end_c_tt
+			add_popularity = {
+			    ideology = democratic
+			    popularity = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_3_politics2
+		icon = GFX_goal_generic_demand_territory
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_3_politics1
+		
+		available = {
+			not = {has_war_with = A05}
+			not = {has_war_with = A07}
+			not = {has_war_with = A28}
+			power_balance_value = {
+			    id = flx_balance
+			    value > -0.5
+			}
+			power_balance_value = {
+			    id = flx_balance
+			    value < 0.5
+			}
+		}
+		bypass = {
+			not = {
+				has_power_balance = {
+				    id = flx_balance
+				}
+			}
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_3_politics1 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		select_effect = {
+
+		}
+		completion_reward = {
+			remove_power_balance = {
+			    id = flx_balance
+			}
+			add_popularity = {
+			    ideology = neutrality
+			    popularity = 0.2
+			}
+			custom_effect_tooltip = flx_stop_bop_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_3_politics3
+		icon = GFX_goal_generic_demand_territory
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_3_politics2
+		
+		available = {
+			or = {
+				not = {
+					country_exists = USA
+				}
+				USA = {
+					has_capitulated = yes
+				}
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 10
+		prerequisite = { focus = FLX_Stage_3_politics2 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		select_effect = {
+
+		}
+		completion_reward = {
+			remove_dynamic_modifier = { modifier = FLX_chaos }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_3_end
+		icon = GFX_focus_NORDIC_mon_research
+		x = -2
+		y = 1
+		relative_position_id = FLX_Stage_3_politics3
+		
+		available = {
+			
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { focus = FLX_Stage_3_army3 }
+		prerequisite = { focus = FLX_Stage_3_industry3 }
+		prerequisite = { focus = FLX_Stage_3_politics3 }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		select_effect = {
+
+		}
+		completion_reward = {
+			add_research_slot = 2
+			modify_tech_sharing_bonus = {
+			    id = flx_research_sharing
+			    bonus = 0.15
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_Stage_final
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		relative_position_id = FLX_Stage_3_end
+		
+		available = {
+			or = {
+				is_in_faction = no
+				is_faction_leader = yes
+			}
+		}
+		bypass = {
+		}
+		
+		cost = 3
+		prerequisite = { focus = FLX_Stage_3_end }
+		mutually_exclusive = {  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
+		select_effect = {
+
+		}
+		completion_reward = {
+			load_focus_tree = flx_overlord_focus
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FLX_after_chaos
+		icon = GFX_focus_POL_support_global_falangism
+		x = 20
+		y = 5
+		#relative_position_id = LSW_overlord_end
+		
+		available = {
+			always = no
+		}
+		bypass = {
+		}
+		allow_branch = {
+			has_country_flag = flx_chaos_flag
+		}
+		cost = 3
+		prerequisite = { 
+			#focus = LSW_overlord_end
+		}
+		
+		mutually_exclusive = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			add_ideas = flx_after_chaos
+			add_ideas = flx_after_chaos_economy
+			add_ideas = flx_after_chaos_military
+
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	focus = {
+		id = FLX_after_chaos_A1
+		icon = GFX_focus_POL_support_global_falangism
+		x = -2
+		y = 1
+		relative_position_id = FLX_after_chaos
+		
+		available = {
+		}
+		bypass = {
+		}
+		cost = 3
+		prerequisite = { 
+			focus = FLX_after_chaos
+		}
+		
+		mutually_exclusive = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			remove_ideas = flx_after_chaos
+			add_timed_idea = {
+			    idea = flx_after_chaos
+			    days = 60
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+focus = {
+		id = FLX_after_chaos_A2
+		icon = GFX_focus_POL_support_global_falangism
+		x = 0
+		y = 1
+		relative_position_id = FLX_after_chaos_A1
+		
+		available = {
+		}
+		bypass = {
+		}
+		cost = 3
+		prerequisite = { 
+			focus = FLX_after_chaos_A1
+		}
+		
+		mutually_exclusive = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			add_ideas = flx_after_chaos_ybkr
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	focus = {
+		id = FLX_after_chaos_A3
+		icon = GFX_focus_POL_support_global_falangism
+		x = 0
+		y = 1
+		relative_position_id = FLX_after_chaos_A2
+		
+		available = {
+		}
+		bypass = {
+		}
+		cost = 3
+		prerequisite = { 
+			focus = FLX_after_chaos_A2
+		}
+		
+		mutually_exclusive = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			add_ideas = flx_after_chaos_cjtz
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	
+	focus = {
+		id = FLX_after_chaos_B1
+		icon = GFX_focus_POL_support_global_falangism
+		x = 0
+		y = 1
+		relative_position_id = FLX_after_chaos
+		
+		available = {
+		}
+		bypass = {
+		}
+		cost = 3
+		prerequisite = { 
+			focus = FLX_after_chaos
+		}
+		
+		mutually_exclusive = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			add_ideas = flx_after_chaos_zbzn
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	focus = {
+		id = FLX_after_chaos_B2
+		icon = GFX_focus_POL_support_global_falangism
+		x = 0
+		y = 1
+		relative_position_id = FLX_after_chaos_B1
+		
+		available = {
+		}
+		bypass = {
+		}
+		cost = 3
+		prerequisite = { 
+			focus = FLX_after_chaos_B1
+		}
+		
+		mutually_exclusive = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			remove_ideas = flx_after_chaos_economy
+			add_timed_idea = {
+			    idea = flx_after_chaos_economy
+			    days = 180
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	focus = {
+		id = FLX_after_chaos_B3
+		icon = GFX_focus_POL_support_global_falangism
+		x = 0
+		y = 1
+		relative_position_id = FLX_after_chaos_B2
+		
+		available = {
+		}
+		bypass = {
+		}
+		cost = 3
+		prerequisite = { 
+			focus = FLX_after_chaos_B2
+		}
+		
+		mutually_exclusive = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			add_ideas = flx_after_chaos_ckyp
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	focus = {
+		id = FLX_after_chaos_C1
+		icon = GFX_focus_POL_support_global_falangism
+		x = 2
+		y = 1
+		relative_position_id = FLX_after_chaos
+		
+		available = {
+		}
+		bypass = {
+		}
+		cost = 3
+		prerequisite = { 
+			focus = FLX_after_chaos
+		}
+		
+		mutually_exclusive = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			add_ideas = flx_after_chaos_qwd
+			remove_ideas = flx_after_chaos_military
+			add_timed_idea = {
+			    idea = flx_after_chaos_military
+			    days = 90
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+focus = {
+		id = FLX_after_chaos_C2
+		icon = GFX_focus_POL_support_global_falangism
+		x = 0
+		y = 1
+		relative_position_id = FLX_after_chaos_C1
+		
+		available = {
+		}
+		bypass = {
+		}
+		cost = 3
+		prerequisite = { 
+			focus = FLX_after_chaos_C1
+		}
+		
+		mutually_exclusive = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			add_ideas = flx_after_chaos_dzd
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	focus = {
+		id = FLX_after_chaos_C3
+		icon = GFX_focus_POL_support_global_falangism
+		x = 0
+		y = 1
+		relative_position_id = FLX_after_chaos_C2
+		
+		available = {
+		}
+		bypass = {
+		}
+		cost = 3
+		prerequisite = { 
+			focus = FLX_after_chaos_C2
+		}
+		
+		mutually_exclusive = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = LSW_FLX_after_chaos_C3_tt
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+focus = {
+		id = FLX_after_chaos_end
+		icon = GFX_focus_POL_support_global_falangism
+		x = 0
+		y = 1
+		relative_position_id = FLX_after_chaos_B3
+		
+		available = {
+		}
+		bypass = {
+		}
+		cost = 3
+		prerequisite = { 
+			focus = FLX_after_chaos_C3
+		}
+		prerequisite = { 
+			focus = FLX_after_chaos_B3
+		}
+		prerequisite = { 
+			focus = FLX_after_chaos_A3
+		}
+		
+		mutually_exclusive = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		search_filters = {  }
+		completion_reward = {
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A01
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A02
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A03
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A04
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A05
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A06
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A07
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A08
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A09
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A11
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A12
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A13
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A14
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A15
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A16
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A17
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A18
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A19
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A20
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A21
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A22
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A23
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A24
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A25
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A26
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A27
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A28
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A30
+			}
+			create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = A31
+			}
+			
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	
 }		

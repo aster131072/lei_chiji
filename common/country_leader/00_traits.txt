@@ -13,6 +13,83 @@
 ###Todo remove commented advisor experience gains
 
 leader_traits = {
+	trait_flx_after_chaos = {
+		random = no
+    political_power_factor = 1
+    political_advisor_cost_factor = 10
+    air_advisor_cost_factor = 10
+    army_advisor_cost_factor = 10
+    navy_advisor_cost_factor = 10
+    drift_defence_factor = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_flx_after_chaos2 = {
+		random = no
+
+		compliance_growth = 0.5
+		monthly_population = -10
+		conscription_factor = -0.75
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_flx_after_chaos3 = {
+		random = no
+		stability_factor = -0.4
+		war_support_factor = 0.5
+		army_attack_factor = 0.2
+		breakthrough_factor = 0.1
+		army_speed_factor = 0.05
+		army_org_factor = 0.35
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_liushuqiu = {
+		random = no
+		political_power_factor = -0.25
+		research_speed_factor = 0.25
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_leiyong = {
+		random = no
+		consumer_goods_factor = -0.25
+		production_speed_industrial_complex_factor = 0.35
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_qiubailin = {
+		random = no
+		stability_factor = -0.2
+		war_support_factor = 0.25
+		army_attack_factor = 0.2
+		breakthrough_factor = 0.1
+		army_org_factor = 0.3
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_lsw_weiyuanhui = {
+		random = no
+		political_power_factor = -0.1
+		stability_factor = -0.15
+		consumer_goods_factor = -0.65
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	
 	trait_ZhengWei = {
 		random = no
@@ -24,12 +101,324 @@ leader_traits = {
 			factor = 1
 		}
 	}
+	trait_xuanlvlan = {
+		random = no
+		research_speed_factor = 0.05	
+		political_power_factor = 0.1
+		decryption_power_factor = 0.5
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_silaoshu = {
+		random = no
+		fascism_drift = 0.1
+		fascism_acceptance = 50
+		democratic_acceptance = -50
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_xiongmao = {
+		random = no
+		special_forces_cap_flat = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_aster = {
+		random = no
+		supply_consumption_factor = -0.5
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_tiaotiaotang = {
+		random = no
+		ai_focus_aggressive_factor = 1.14
+		ai_desired_divisions_factor = 5.14
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_huxiaozhang = {
+		random = no
+		ai_desired_divisions_factor = 10
+		production_speed_buildings_factor = 0.5
+		army_speed_factor = 0.1
+		fascism_acceptance = 100
+		democratic_acceptance = 100
+		neutrality_acceptance = 100
+		communism_acceptance = 100
+		stability_factor = -0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_leibac = {
+		random = no
+		democratic_acceptance = 100
+		army_core_attack_factor = 0.1
+		army_core_defence_factor = 0.1
+		army_morale_factor = 0.3
+		stability_factor = -0.2
+		war_support_factor = 0.2
+		weekly_casualties_war_support = 0.001
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_mono = {
+		random = no
+		weekly_manpower = 5000 
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_mono_advisor = {
+		random = no
+		fascism_drift = 0.01
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 10
+				has_government = fascism
+			}
+		}
+	}
+	trait_huzhua_advisor = {
+		random = no
+		communism_drift = 0.01
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 10
+				has_government = communism
+			}
+		}
+	}
+	trait_asteroid = {
+		random = no
+		army_core_attack_factor = 0.1
+		army_attack_factor = 0.1
+		army_speed_factor = 0.1
+		stability_factor = -0.25 
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_bailiechongji = {
+		random = no
+		required_garrison_factor = -0.5
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_qinghai = {
+		random = no
+		political_power_factor = -0.2
+		drift_defence_factor = 1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_hashikumo = {
+		random = no
+		fascism_acceptance = -100
+		democratic_acceptance = -100
+		neutrality_acceptance = -100
+		communism_acceptance = -100
+		army_attack_factor = 0.3
+		no_compliance_gain = 1
+		resistance_target = 0.5
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_christian = {
+		random = no
+		political_power_factor = -0.1
+		army_attack_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_yuanshen = {
+		random = no
+		nuclear_production_factor = 1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_basa = {
+		random = no
+		fascism_drift = 0.05
+		trade_opinion_factor = 0.5
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_egui = {
+		random = no
+		political_power_factor = -0.2
+		acclimatization_hot_climate_gain_factor = 1
+		acclimatization_cold_climate_gain_factor = 1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_erciyuan = {
+		random = no
+		political_power_factor = -0.1
+		naval_defense_factor = 0.25
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_luoying = {
+		random = no
+		political_power_factor = -0.2
+		party_popularity_stability_factor = 0.6
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_yinhai = {
+		random = no
+		political_power_factor = -0.15
+		political_advisor_cost_factor = 0.5
+		air_advisor_cost_factor = 0.5
+		army_advisor_cost_factor = 0.5
+		navy_advisor_cost_factor = 0.5
+		stability_factor = 0.3
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_jiejiao = {
+		random = no
+		political_power_factor = 0.2
+		stability_factor = -0.2
+		war_support_factor = 0.2
+		democratic_drift = 0.01
+		weekly_manpower = 500
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_mimi = {
+		random = no
+		political_power_factor = 0.1
+		stability_factor = -0.05
+		war_support_factor = 0.1
+		communism_drift = 0.01
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_mianbaogou = {
+		random = no
+		fascism_drift = 0.03
+		stability_factor = -0.05
+		war_support_factor = 0.1
+		drift_defence_factor = -0.5
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_ksqsk = {
+		random = no
+		democratic_drift = 0.1
+		war_stability_factor = 0.3
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_nby = {
+		random = no
+		democratic_drift = 0.1
+		democratic_acceptance = 50
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_nanhua = {
+		random = no
+		research_speed_factor = 0.2
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_houdu = {
+		random = no
+		political_power_factor = -0.2
+		stability_factor = 0.2
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_shixve = {
+		random = no
+		political_power_factor = 0.25
+		stability_factor = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_ayya = {
+		random = no
+		political_power_factor = 0.2
+		drift_defence_factor = -0.5
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_ouzhoulianhe = {
+		random = no
+		army_attack_against_major_factor = 0.2
+		army_defence_against_major_factor = 0.2
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_fanleixiehuijundui = {
+		random = no
+		stability_factor = -0.2
+		political_power_factor = -0.2
+		surrender_limit = 0.2
+		recruitable_population = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_yuanzhang = {
+		random = no
+		stability_factor = -0.05
+		weekly_manpower = 8260
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	trait_tianxin = {
+		random = no
+		recruitable_population_factor = 0.25
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 	dictator = {
 		random = no
 		political_power_factor = 0.25
 		weekly_casualties_war_support = 0.001
 		ai_desired_divisions_factor = 0.20
-
+	
 		ai_will_do = {
 			factor = 1
 		}

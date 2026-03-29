@@ -1,0 +1,576 @@
+LSW_bop_category = {
+  LSW_bop_decision_1 = {
+  	cost = 100
+  	days_re_enable = 30
+  	days_remove = 30
+  	available = {
+	  	not = {
+	  		has_country_flag = lsw_increasing_influence
+	  	}	  
+  	}
+  	complete_effect = {
+  		set_country_flag = lsw_increasing_influence
+  	}
+		remove_effect = {
+			add_power_balance_value = {
+			    id = lsw_balance
+			    value = 0.05
+			}
+			clr_country_flag = lsw_increasing_influence
+		}
+  }
+  LSW_bop_decision_research = {
+  	cost = 50
+  	days_re_enable = 0
+  	days_remove = 60
+		ai_will_do = {
+		    base = 0
+		    modifier = {
+		        add = 10
+		        has_political_power > 100
+		    }
+		}
+  	available = {
+	  	not = {
+	  		has_country_flag = lsw_increasing_influence
+	  	}	  
+	  	has_completed_focus = LSW_Research_A1
+  	}
+  	modifier = {
+  		research_speed_factor = 1
+  	}
+  	complete_effect = {
+  		set_country_flag = lsw_increasing_influence
+			add_power_balance_value = {
+			    id = lsw_balance
+			    value = -0.05
+			}
+  	}
+		remove_effect = {
+			clr_country_flag = lsw_increasing_influence
+		}
+  }
+  LSW_bop_decision_war = {
+  	cost = 50
+  	days_re_enable = 0
+  	days_remove = 60
+  	available = {
+	  	not = {
+	  		has_country_flag = lsw_increasing_influence
+	  	}	  
+	  	LSW = {
+	  		has_war = yes
+	  	}
+	  	has_completed_focus = LSW_Research_B1
+  	}
+		ai_will_do = {
+		    base = 0
+		    modifier = {
+		        add = 100
+		        has_political_power > 100
+		    }
+		}
+		modifier = {
+			army_attack_factor = 0.2
+			army_defence_factor = 0.2
+		}
+  	complete_effect = {
+  		set_country_flag = lsw_increasing_influence
+			add_power_balance_value = {
+			    id = lsw_balance
+			    value = -0.05
+			}
+  	}
+		remove_effect = {
+			clr_country_flag = lsw_increasing_influence
+		}
+  }
+  LSW_bop_decision_factory = {
+  	cost = 50
+  	days_re_enable = 0
+  	days_remove = 60
+  	available = {
+	  	not = {
+	  		has_country_flag = lsw_increasing_influence
+	  	}	  
+	  	has_completed_focus = LSW_Research_C1
+  	}
+		ai_will_do = {
+		    base = 0
+		    modifier = {
+		        add = 10
+		        has_political_power > 100
+		    }
+		}
+		modifier = {
+			production_speed_buildings_factor = 1 
+		}
+  	complete_effect = {
+  		set_country_flag = lsw_increasing_influence
+			add_power_balance_value = {
+			    id = lsw_balance
+			    value = -0.05
+			}
+  	}
+		remove_effect = {
+			clr_country_flag = lsw_increasing_influence
+		}
+  }
+	LSW_increase_kmv = {
+	    activation = {
+				LSW = {
+					is_ai = yes
+				}
+	    }
+	    available = {
+				always = no
+	    }
+	    icon = mission_icon     # For GFX_decision_mission_icon
+	    is_good = yes
+	    days_mission_timeout = 70
+	    selectable_mission = no
+	    timeout_effect = {
+				add_power_balance_value = {
+				    id = lsw_balance
+				    value = 0.15
+				}
+	    }
+	}
+}
+LSW_health_category = {
+	LSW_health_mission = {
+	    activation = {
+				has_completed_focus = LSW_Ways_Lei
+				not = {has_country_flag = LSW_cured}
+	    }
+	    available = {
+				custom_trigger_tooltip = {
+				    tooltip = LSW_cure_tt		
+				    has_country_flag = LSW_cured
+				}
+	    }
+	    icon = mission_icon     # For GFX_decision_mission_icon
+	    is_good = no
+	    days_mission_timeout = 70
+	    selectable_mission = no
+	    timeout_effect = {
+					add_to_variable = {
+					    var = LSW.health
+					    value = -0.05
+					    tooltip = sub_to_lsw_health_tt
+					}
+	    }
+	}
+  LSW_health_decision_1 = {
+  	cost = 0
+  	days_re_enable = 0
+  	days_remove = 50
+  	available = {
+	  	not = {
+	  		has_country_flag = curing_lsw
+	  	}	  
+  	}
+  	visible = {
+  		has_completed_focus = LSW_Research_D1
+  	}
+		ai_will_do = {
+		    base = 0
+		    modifier = {
+		      add = 10
+					check_variable = {
+					    var = LSW.health
+					    value = 0.95
+					    compare = less_than_or_equals
+					}
+		    }
+		}
+  	complete_effect = {
+  		set_country_flag = curing_lsw
+  	}
+		remove_effect = {
+			add_to_variable = {
+			    var = LSW.health
+			    value = 0.05
+			    tooltip = add_to_lsw_health_tt
+			}
+			clamp_variable = {
+			    var = LSW.health
+			    max = 1
+			}
+			add_power_balance_value = {
+			    id = lsw_balance
+			    value = -0.05
+			}
+			clr_country_flag = curing_lsw
+		}
+  }
+  LSW_health_decision_2 = {
+  	cost = 100
+  	days_re_enable = 0
+  	days_remove = 50
+  	available = {
+	  	not = {
+	  		has_country_flag = curing_lsw
+	  	}	  
+  	}
+  	visible = {
+  		has_completed_focus = LSW_Research_D2
+  		not = {has_country_flag = LSW_cure_total_fail}
+  	}
+		ai_will_do = {
+		    base = 0
+		    modifier = {
+		      add = 10
+					check_variable = {
+					    var = LSW.health
+					    value = 0.9
+					    compare = less_than_or_equals
+					}
+		    }
+		}
+  	complete_effect = {
+  		set_country_flag = curing_lsw
+  	}
+		remove_effect = {
+			random_list = {
+				1 = {
+					add_to_variable = {
+					    var = LSW.health
+					    value = 0.1
+					    tooltip = super_add_to_lsw_health_tt
+					}
+					clamp_variable = {
+					    var = LSW.health
+					    max = 1
+					}
+				}
+				4 = {
+					add_to_variable = {
+					    var = LSW.health
+					    value = 0.05
+					    tooltip = add_to_lsw_health_tt
+					}
+					clamp_variable = {
+					    var = LSW.health
+					    max = 1
+					}
+				}
+				3 = {
+					add_days_mission_timeout = {
+					    mission = LSW_health_mission
+					    days = 30
+					}
+				}
+				2 = {
+					add_to_variable = {
+					    var = LSW.health
+					    value = -0.05
+					    tooltip = sub_to_lsw_health_tt
+					}
+				}
+			}
+
+			clr_country_flag = curing_lsw
+		}
+  }
+  LSW_health_decision_3 = {
+  	cost = 100
+  	days_remove = 50
+  	available = {
+	  	not = {
+	  		has_country_flag = curing_lsw
+	  	}	  
+  	}
+  	visible = {
+  		has_completed_focus = LSW_Research_D3
+  		not = {has_country_flag = LSW_cure_total_fail}
+  		not = {has_country_flag = LSW_cured}
+  	}
+		ai_will_do = {
+		    base = 0
+		    modifier = {
+		      add = 100
+					check_variable = {
+					    var = LSW.health
+					    value = 0.85
+					    compare = less_than_or_equals
+					}
+		    }
+		}
+  	complete_effect = {
+  		set_country_flag = curing_lsw
+  	}
+		remove_effect = {
+			random_list = {
+				1 = {
+					country_event = lsw_event.4
+					add_to_variable = {
+					    var = LSW.health
+					    value = -0.15
+					    tooltip = hyper_sub_to_lsw_health_tt
+					}
+					custom_effect_tooltip = LSW_cure_total_fail_tt
+					set_country_flag = LSW_cure_total_fail
+				}
+				20 = { 
+					add_to_variable = {
+					    var = LSW.health
+					    value = -0.05
+					    tooltip = sub_to_lsw_health_tt
+					}
+					add_to_variable = {
+					    var = LSW.cure_exp
+					    value = 1
+					    tooltip = LSW_cure_fail_tt
+					}
+				}
+				1 = {
+					country_event = lsw_event.3
+					add_to_variable = {
+					    var = LSW.health
+					    value = 0.15
+					    tooltip = hyper_add_to_lsw_health_tt
+					}
+					clamp_variable = {
+					    var = LSW.health
+					    max = 1
+					}
+					custom_effect_tooltip = LSW_cured_tt
+					set_country_flag = LSW_cured
+	        modifier = {
+	            add = LSW.cure_exp
+	        }
+				}
+			}
+			clr_country_flag = curing_lsw
+		}
+  }
+}
+LSW_war_category = {
+	LSW_war_decision = {
+    target_trigger = {
+    	FROM = {
+    		has_civil_war = no
+    		not = {
+    			is_puppet_of = LSW
+    		}
+    	}
+    }
+  	available = {
+	  	not = {
+	  		has_country_flag = lsw_declaring_war
+	  	}	  
+  	}
+    targets = {TIB RAJ BHU BRM NEP BAN PAK YUN SIA AFG PER IRQ TUR SAU YEM OMA}
+    cost = 0
+    days_remove = 25
+    war_with_target_on_complete = yes
+  	complete_effect = {
+  		set_country_flag = lsw_declaring_war
+  	}
+    remove_effect = {
+    	clr_country_flag = lsw_declaring_war
+    	if = {
+    		limit = {
+    			FROM = {
+    				num_of_controlled_states > 1
+    			}
+    		}
+    		if = {
+    			limit = {
+    				LSW = {
+    					is_ai = yes
+    				}
+    			}
+		    	FROM = {
+						start_civil_war = {
+					    ideology = fascism
+					    size = 0.1
+					    army_ratio = 1
+					    navy_ratio = 1
+					    air_ratio = 1
+					    states_filter = {
+				      	any_neighbor_state = {
+				      		owner = {
+				      			is_ally_with = ROOT
+				      		}
+				      	}
+				      	is_capital = no
+					    }
+					    ROOT = {
+								puppet = {
+								    target = PREV
+								    end_civil_wars = no
+								}
+					    }
+							ROOT = {
+								add_to_war = {
+								    targeted_alliance = PREV
+								    enemy = FROM
+								    hostility_reason = asked_to_join
+								}
+							}
+						}
+		    	}
+    		}
+    		else = {
+		    	FROM = {
+						start_civil_war = {
+					    ideology = fascism
+					    size = 0.1
+					    army_ratio = 0.1
+					    navy_ratio = 1
+					    air_ratio = 1
+					    states_filter = {
+				      	any_neighbor_state = {
+				      		owner = {
+				      			is_ally_with = ROOT
+				      		}
+				      	}
+				      	is_capital = no
+					    }
+					    ROOT = {
+								puppet = {
+								    target = PREV
+								    end_civil_wars = no
+								}
+					    }
+							ROOT = {
+								add_to_war = {
+								    targeted_alliance = PREV
+								    enemy = FROM
+								    hostility_reason = asked_to_join
+								}
+							}
+						}
+		    	}
+    		}
+
+    	}
+			else = {
+		    ROOT = {
+					puppet = {
+					    target = FROM
+					}
+		    }
+			}
+    }
+    ai_will_do = {
+    	base = 0
+	    modifier = {
+	      add = -300
+	      not = {
+		      FROM = {
+						any_neighbor_country = {
+							is_ally_with = ROOT
+						}
+	      	}
+	      }
+	    }
+	    modifier = {
+	      add = 100
+				strength_ratio = {
+				    tag = FROM
+				    ratio > 1
+				}
+	    }
+	    modifier = {
+	      add = -100
+				any_neighbor_country = {
+					has_war_with = ROOT
+				}
+	    }
+	    modifier = {
+	      add = 100
+				strength_ratio = {
+				    tag = FROM
+				    ratio > 3
+				}
+	    }
+    }
+	}
+	LSW_puppet_army_decision = {
+	    target_root_trigger = {
+	      has_completed_focus = LSW_overlord_war2
+	    }
+	    target_trigger = {
+	    	FROM = {
+	    		is_puppet_of = LSW
+	    		not = {has_idea = lsw_puppet_army}
+	    		not = {has_idea = lsw_puppet_industry}
+	    		not = {has_idea = lsw_puppet_economy}
+	    	}
+	    }
+	  	available = {
+		  		
+	  	}
+	    target_array = subjects
+	    cost = 100
+
+	  	complete_effect = {
+	  		FROM = {
+	  			add_ideas = lsw_puppet_army
+	  		}
+	  	}
+
+	    ai_will_do = {
+	    	base = 100
+	    }
+	}
+	LSW_puppet_industry_decision = {
+	    target_root_trigger = {
+	      has_completed_focus = LSW_overlord_war2
+	    }
+	    target_trigger = {
+	    	FROM = {
+	    		is_puppet_of = LSW
+	    		not = {has_idea = lsw_puppet_army}
+	    		not = {has_idea = lsw_puppet_industry}
+	    		not = {has_idea = lsw_puppet_economy}
+	    	}
+	    }
+	  	available = {
+		  		
+	  	}
+	    target_array = subjects
+	    cost = 100
+
+	  	complete_effect = {
+	  		FROM = {
+	  			add_ideas = lsw_puppet_industry
+	  		}
+	  	}
+
+	    ai_will_do = {
+	    	base = 0
+	    }
+	}
+	LSW_puppet_economy_decision = {
+	    target_root_trigger = {
+	      has_completed_focus = LSW_overlord_war2
+	    }
+	    target_trigger = {
+	    	FROM = {
+	    		is_puppet_of = LSW
+	    		not = {has_idea = lsw_puppet_army}
+	    		not = {has_idea = lsw_puppet_industry}
+	    		not = {has_idea = lsw_puppet_economy}
+	    	}
+	    }
+	  	available = {
+		  		
+	  	}
+	    target_array = subjects
+	    cost = 100
+
+	  	complete_effect = {
+	  		FROM = {
+	  			add_ideas = lsw_puppet_economy
+	  		}
+	  	}
+
+	    ai_will_do = {
+	    	base = 0
+	    }
+	}
+}

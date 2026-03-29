@@ -1,0 +1,242 @@
+FLX_bop_category = {
+	icon = GFX_decision_category_power_struggle
+	
+	allowed = {
+		original_tag = FLX
+	}
+	
+	priority = 90
+	
+	visible = {
+
+	}
+}
+LSW_war_category = {
+	icon = GFX_decision_category_power_struggle
+	
+	allowed = {
+		original_tag = LSW
+	}
+	
+	priority = 90
+	
+	visible = {
+  	LSW = {
+  		has_completed_focus = LSW_overlord_war1
+  	}
+	}
+}
+FLX_lsw_category = {
+	icon = GFX_decision_category_power_struggle
+	
+	allowed = {
+		or = {
+			original_tag = FLX
+			original_tag = A19
+			original_tag = A05
+			original_tag = A07
+			original_tag = A28
+		}
+	}
+	
+	priority = 90
+	
+	visible = {
+		or = {
+			original_tag = FLX
+			original_tag = A19
+			and = {
+				original_tag = A05
+				is_faction_leader = yes
+			}
+			and = {
+				original_tag = A07
+				is_faction_leader = yes
+			}
+			and = {
+				original_tag = A28
+				is_faction_leader = yes
+			}
+		}
+		not = {
+			has_country_flag = kill_lsw
+		}
+  	FLX = {
+  		has_completed_focus = FLX_Stage_2_politics1
+  	}
+	}
+}
+LSW_bop_category = {
+	icon = GFX_decision_category_power_struggle
+	
+	allowed = {
+		original_tag = LSW
+	}
+	
+	priority = 90
+	
+	visible = {
+		
+	}
+}
+FLX_army_category = {
+	icon = GFX_decision_category_power_struggle
+	
+	allowed = {
+or = {
+original_tag = FLX
+original_tag = A01
+original_tag = A02
+original_tag = A03
+original_tag = A04
+original_tag = A05
+original_tag = A06
+original_tag = A07
+original_tag = A08
+original_tag = A09
+original_tag = A10
+original_tag = A11
+original_tag = A12
+original_tag = A13
+original_tag = A14
+original_tag = A15
+original_tag = A16
+original_tag = A17
+original_tag = A18
+original_tag = A19
+original_tag = A20
+original_tag = A21
+original_tag = A22
+original_tag = A23
+original_tag = A24
+original_tag = A25
+original_tag = A26
+original_tag = A27
+original_tag = A28
+original_tag = A29
+original_tag = A30
+original_tag = A31
+
+}
+		
+	}
+	
+	priority = 90
+	
+	visible = {
+	    	FLX = {
+	    		has_completed_focus = FLX_Public_3
+	    	}
+	}
+}
+FLX_chaos_category = {
+	icon = GFX_decision_category_power_struggle
+	
+	allowed = {
+or = {
+original_tag = A01
+original_tag = A02
+original_tag = A03
+original_tag = A04
+original_tag = A05
+original_tag = A06
+original_tag = A07
+original_tag = A08
+original_tag = A09
+original_tag = A10
+original_tag = A11
+original_tag = A12
+original_tag = A13
+original_tag = A14
+original_tag = A15
+original_tag = A16
+original_tag = A17
+original_tag = A18
+original_tag = A19
+original_tag = A20
+original_tag = A21
+original_tag = A22
+original_tag = A23
+original_tag = A24
+original_tag = A25
+original_tag = A26
+original_tag = A27
+original_tag = A28
+original_tag = A29
+original_tag = A30
+original_tag = A31
+			original_tag = SMI
+			original_tag = KAR
+			original_tag = CRI
+			original_tag = KAL
+			original_tag = DAG
+			original_tag = AZR
+			original_tag = ARM
+			original_tag = GEO
+			original_tag = ABK
+			original_tag = KBK
+			original_tag = NOA
+			original_tag = CIN
+			original_tag = MEL
+			original_tag = CHU
+			original_tag = TAT
+			original_tag = UDM
+			original_tag = BSK
+			original_tag = SMI
+			original_tag = NEN
+			original_tag = KOM
+			original_tag = YAM
+			original_tag = OVO
+			original_tag = TAY
+			original_tag = YAK
+			original_tag = FER #major
+			original_tag = CKK
+			original_tag = VLA
+			original_tag = BYA
+			original_tag = KHA
+			original_tag = ALT
+			original_tag = VGE
+			original_tag = KAZ
+			original_tag = KKP
+			original_tag = KHI
+			original_tag = TMS
+			original_tag = UZB
+			original_tag = BUK
+			original_tag = TAJ
+			original_tag = KYR
+}
+		
+	}
+	
+	priority = 90
+	
+	visible = {
+date > 1937.1.1
+	}
+}
+LSW_health_category = {
+	icon = GFX_decision_category_power_struggle
+	
+	allowed = {
+		original_tag = LSW
+	}
+	
+	priority = 10
+	visible_when_empty = yes
+	visible = {
+		has_completed_focus = LSW_Ways_Lei
+	}
+}
+FLX_massacre_category = {
+	icon = GFX_decision_category_power_struggle
+	
+	allowed = {
+		original_tag = FLX
+	}
+	
+	priority = 10
+	visible_when_empty = yes
+	visible = {
+		has_completed_focus = FLX_after_chaos_C3
+	}
+}

@@ -1,0 +1,15 @@
+flx_mono_modifier = {
+    power_balance_weekly = -0.005
+}
+flx_huzhua_modifier = {
+    power_balance_weekly = 0.005
+}
+lsw_kmv_modifier1 = {
+    power_balance_weekly = 0.005
+}
+lsw_kmv_modifier2 = {
+    power_balance_weekly = 0.01
+}
+lsw_kmv_modifier3 = {
+    power_balance_weekly = 0.015
+}

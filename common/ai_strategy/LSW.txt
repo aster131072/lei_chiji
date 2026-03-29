@@ -1,0 +1,10 @@
+LSW_fuck_relation = {
+    allowed = {
+        always = yes
+    }
+    ai_strategy = {
+        type = pp_spend_priority
+        id = relation
+        value = -9999
+    }
+}

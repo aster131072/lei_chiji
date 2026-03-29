@@ -1,0 +1,25 @@
+FLX_chaos = {
+    icon = GFX_idea_jap_militarism_showa
+    war_support_factor = FLX.chaos
+    stability_factor = FLX.chaos
+    political_power_gain = FLX.chaos
+    custom_modifier_tooltip = FLX_chaos_tt
+}
+LSW_health = {
+    icon = GFX_idea_SOV_atomic_bomb_project
+    political_power_gain = LSW.health
+    research_speed_factor = LSW.health
+    custom_modifier_tooltip = LSW_health_tt
+}
+FLX_ideology = {
+		icon = GFX_idea_generic_volunteer_expedition_bonus
+    remove_trigger = {
+        NOT = {
+            is_ally_with = FLX
+        }
+    }
+    democratic_drift = FLX.party_popularity@democratic
+    communism_drift = FLX.party_popularity@communism
+    fascism_drift = FLX.party_popularity@fascism
+    neutrality_drift = FLX.party_popularity@neutrality
+}

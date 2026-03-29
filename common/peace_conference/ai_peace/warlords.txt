@@ -1,0 +1,83 @@
+# Scripted AI desire for peace actions.
+# See documentation.info file for more detailed scripting information.
+
+peace_ai_desires = {
+    # Warlords want to expand their territory in China, not create puppets- So take states even if not cores, they _can_ be in the future, right. This goes for MAN as well
+    warlords_want_to_conquer_china = {
+        peace_action_type = { take_states }
+        enable = {
+            FROM.FROM.FROM = {
+                any_neighbor_state = {
+                    OR = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                        pc_is_state_claimed_by = ROOT.FROM
+                    }
+                }
+            }
+            FROM = {
+                tag = ROOT
+            }
+            
+        }
+        ai_desire = 3150
+    }
+    warlords_want_to_conquer_china_carefully = {
+        peace_action_type = { take_states }
+        enable = {
+            FROM.FROM.FROM = {
+                #OR = {
+                #    is_core_of = PRC
+                #    is_core_of = CHI
+                #    is_core_of = SOV
+                #    is_core_of = MON
+                #    is_core_of = KOR
+                #}
+                NOT = {
+                    any_neighbor_state = {
+                        OR = {
+                            is_owned_by = ROOT
+                            is_controlled_by = ROOT
+                            pc_is_state_claimed_by = ROOT.FROM
+                        }
+                    }
+                }
+            }
+            FROM = {
+                tag = ROOT
+            }
+            
+        }
+        ai_desire = -150
+    }
+    puppet_if_cant_take = {
+        peace_action_type = { puppet }
+        enable = {
+            FROM.FROM.FROM = {
+                NOT = {
+                    any_neighbor_state = {
+                        OR = {
+                            is_owned_by = ROOT
+                            is_controlled_by = ROOT
+                            pc_is_state_claimed_by = ROOT.FROM
+                        }
+                    }
+                }
+            }
+            FROM = {
+                tag = ROOT
+            }
+            
+        }
+        ai_desire = 3075
+    }
+    
+    warlords_dont_puppet_or_liberate_china = {
+        peace_action_type = { force_government liberate }
+        enable = {
+            always = yes
+            
+        }
+        ai_desire = -4000
+    }
+}
