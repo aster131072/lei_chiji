@@ -1,0 +1,21 @@
+spriteTypes = {	
+
+	spriteType = {
+        name = "GFX_lsw"
+        texturefile = "gfx/leaders/LSW/lsw.dds"
+	}
+    spriteType = {
+        name = GFX_bop_mono                         # In some cases, beginning with GFX_ is mandatory for it to work.
+        texturefile = gfx/interface/bop/bop_mono.dds # The folder and filename don't matter, as long as they are correct
+    }                                                   # Only the forward slash '/' (can be doubled as '//') can be used to separate folders.
+    spriteType = {                                      # The image doesn't have to be .dds, as .tga and .png are acceptable.
+        name = GFX_bop_huzhua
+        texturefile = gfx/interface/bop/bop_huzhua.dds
+        #noOfFrames = 2 # Splits the image into 2 halves, which may be switched between dynamically in GUI
+    }
+    spriteType = {                                      # The image doesn't have to be .dds, as .tga and .png are acceptable.
+        name = GFX_spr_international_brigades
+        texturefile = gfx/interface/bop/spr_international_brigades.dds
+        #noOfFrames = 2 # Splits the image into 2 halves, which may be switched between dynamically in GUI
+    }
+}
