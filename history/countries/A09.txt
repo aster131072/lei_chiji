@@ -51,13 +51,11 @@ add_ideas = {
 
 #set_convoys = 0
 create_country_leader = {
-	name = "旋律蓝" #领导人名字
-	desc = "XUANLVLAN_DESC" #领导人介绍
-	picture = "xll.dds" #领导人图片
+	name = "百裂冲击" #领导人名字
 	expire = "1965.1.1" #领导人退休时间
-	ideology = despotism #领导人子意识形态
+	ideology = pingheng #领导人子意识形态
 	traits = { #领导人特质
-		dictator
+		trait_bailiechongji
 	}
 }
 
@@ -69,7 +67,8 @@ set_politics = {
 }
 
 set_popularities = {
-	neutrality = 100
+	neutrality = 80
+	fascism = 20
 }
 
 ### VARIANTS ###

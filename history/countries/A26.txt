@@ -51,25 +51,24 @@ add_ideas = {
 
 #set_convoys = 0
 create_country_leader = {
-	name = "旋律蓝" #领导人名字
-	desc = "XUANLVLAN_DESC" #领导人介绍
-	picture = "xll.dds" #领导人图片
+	name = "德川裕太" #领导人名字
 	expire = "1965.1.1" #领导人退休时间
-	ideology = despotism #领导人子意识形态
+	ideology = dabang #领导人子意识形态
 	traits = { #领导人特质
-		dictator
+		trait_shixve
 	}
 }
 
 set_politics = {
-	ruling_party = neutrality
+	ruling_party = fascism 
 	last_election = "1935.8.26"
 	election_frequency = 48
 	elections_allowed = no
 }
 
 set_popularities = {
-	neutrality = 100
+	neutrality = 20
+	fascism = 80
 }
 
 ### VARIANTS ###

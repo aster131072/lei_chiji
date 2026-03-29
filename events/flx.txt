@@ -1,0 +1,1520 @@
+﻿add_namespace = flx_event
+add_namespace = lsw_event
+country_event = {
+	id = flx_event.1
+	title = flx_event.1.t	
+	desc = flx_event.1.desc	#
+	picture = GFX_event_test
+	is_triggered_only = no
+	fire_only_once = no
+	major = no
+	hidden = yes
+	trigger = {
+	    tag = FLX
+	    any_other_country = {
+	    	AND ={
+		    	is_puppet_of = FLX
+		    	NOT = {
+		    		tag = A29
+		    	}
+	    	}
+
+	    } 
+	}
+mean_time_to_happen = {
+    days = 2
+}
+	immediate = {
+    every_other_country = {
+    	limit = {
+    		is_puppet_of = FLX
+    	}
+    	A29 = {
+				annex_country = {
+				    target = PREV
+				    transfer_troops = yes
+				}
+    	}
+    } 
+		if ={
+			limit = {
+				A29 = {
+						exists = yes
+				}
+			}
+	    FLX = {add_to_faction = A29}
+	    FLX = {puppet = A29}
+		}
+
+	}
+	option = { 
+		name = flx_event.1.a #historical
+		ai_chance = {
+			base = 50
+		}
+
+	}
+
+}
+
+country_event = {
+	id = flx_event.2
+	title = flx_event.2.t	
+	desc = flx_event.2.desc	#mono夺权
+	picture = GFX_event_test
+	is_triggered_only = yes
+	fire_only_once = no
+	major = no
+	hidden = no
+	immediate = {
+		add_to_variable = {
+		    var = FLX.chaos
+		    value = -0.2
+		    tooltip = super_add_to_flx_chaos_tt
+		}
+	}
+	option = { 
+		name = flx_event.2.a #historical
+		ai_chance = {
+			base = 50
+		}
+		if = {
+			limit = {
+				A05 = {
+					exists = yes
+				}
+			}
+			A05 = {
+				leave_faction = yes
+				create_faction = XIANGJIAO_FACTION
+				every_other_country = {
+					limit = {
+						has_country_leader_ideology = dabang
+					}
+					leave_faction = yes
+					A05 = { add_to_faction = PREV }
+				}
+			}
+
+			every_country = {
+				limit = {
+					and = {
+						has_country_leader_ideology = pingheng
+						NOT = {
+							tag = FLX
+						}
+					}
+
+				}
+				random_list = {
+					1 = {
+						leave_faction = yes
+						A05 = { add_to_faction = PREV }
+		        modifier = {
+		            factor = PREV.party_popularity_100@communism
+								country_exists = PREV
+		        }
+					}
+					1 = {
+		        modifier = {
+		            factor = PREV.party_popularity_100@neutrality
+								country_exists = PREV
+		        }
+					}
+					1 = {
+		        modifier = {
+		            factor = PREV.party_popularity_100@fascism
+								country_exists = PREV
+		        }
+					}
+				}
+			}
+		}
+		else = {
+			A28 = {
+				leave_faction = yes
+				create_faction = XIANGJIAO_FACTION
+				every_other_country = {
+					limit = {
+						has_country_leader_ideology = xiangjiao
+					}
+					leave_faction = yes
+					A28 = { add_to_faction = PREV }
+				}
+			}
+
+			every_country = {
+				limit = {
+					and = {
+						has_country_leader_ideology = pingheng
+						NOT = {
+							tag = FLX
+						}
+					}
+				}
+				random_list = {
+					1 = {
+						leave_faction = yes
+						A28 = { add_to_faction = PREV }
+		        modifier = {
+		            factor = PREV.party_popularity_100@communism
+								country_exists = PREV
+		        }
+					}
+					1 = {
+		        modifier = {
+		            factor = PREV.party_popularity_100@neutrality
+								country_exists = PREV
+		        }
+					}
+					1 = {
+		        modifier = {
+		            factor = PREV.party_popularity_100@fascism
+								country_exists = PREV
+		        }
+					}
+				}
+			}
+		}
+		complete_national_focus = FLX_Politics_mono2
+		FLX = {
+			declare_war_on = {
+			    target = A05
+			    type = annex_everything
+			}
+		}
+		FLX = {
+			declare_war_on = {
+			    target = A28
+			    type = annex_everything
+			}
+		}
+	}
+
+}
+country_event = {
+	id = flx_event.3
+	title = flx_event.3.t	
+	desc = flx_event.3.desc	#虎爪夺权
+	picture = GFX_event_test
+	is_triggered_only = yes
+	fire_only_once = no
+	major = no
+	hidden = no
+	immediate = {
+		add_to_variable = {
+		    var = FLX.chaos
+		    value = -0.2
+		    tooltip = super_add_to_flx_chaos_tt
+		}
+	}
+	option = { 
+		name = flx_event.3.a #historical
+		ai_chance = {
+			base = 50
+		}
+		A07 = {
+			leave_faction = yes
+			create_faction = DABANG_FACTION
+			every_other_country = {
+				limit = {
+					has_country_leader_ideology = dabang
+				}
+				leave_faction = yes
+				A07 = { add_to_faction = PREV }
+			}
+		}
+
+		every_country = {
+			limit = {
+				and = {
+					has_country_leader_ideology = pingheng
+					NOT = {
+						tag = FLX
+					}
+				}
+			}
+			random_list = {
+				1 = {
+					leave_faction = yes
+					A07 = { add_to_faction = PREV }
+	        modifier = {
+	            factor = PREV.party_popularity_100@fascism
+							country_exists = PREV
+	        }
+				}
+				1 = {
+	        modifier = {
+	            factor = PREV.party_popularity_100@neutrality
+							country_exists = PREV
+	        }
+				}
+				1 = {
+	        modifier = {
+	            factor = PREV.party_popularity_100@communism
+							country_exists = PREV
+	        }
+				}
+			}
+		}
+		complete_national_focus = FLX_Politics_huzhua2
+		FLX = {
+			declare_war_on = {
+			    target = A07
+			    type = annex_everything
+			}
+		}
+	}
+
+}
+news_event = {
+	id = flx_event.4
+	title = flx_event.4.t	
+	desc = flx_event.4.desc	#反雷协会爆炸
+	picture = GFX_event_test
+	is_triggered_only = no
+	fire_only_once = no
+	major = yes
+	hidden = no
+	mean_time_to_happen = {
+	    days = 2
+	}
+	trigger = {
+		and = {
+			check_variable = {
+			    var = FLX.chaos
+			    value = -1
+			    compare = less_than_or_equals
+			}
+			FLX = {
+				not = {
+					has_country_flag = flx_chaos_flag
+				}
+			}
+		}
+	}
+
+	immediate = {
+		FLX = {
+			set_country_flag = flx_chaos_flag
+			clear_variable = chaos
+		}
+	}
+	option = { 
+		name = flx_event.4.a #no effect.do it in event16
+		ai_chance = {
+			base = 50
+		}
+		if = {
+			limit = {
+				tag = FLX
+			}
+			country_event = { id = flx_event.16}
+		}
+		
+	}
+
+}
+country_event = {
+	id = flx_event.16
+	title = flx_event.16.t	
+	desc = flx_event.16.desc	#反雷协会爆炸
+	picture = GFX_event_test
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = no
+	hidden = yes
+	trigger = {
+		
+	}
+
+	immediate = {
+		FLX = {
+			dismantle_faction = yes
+		}
+		A05 = {
+			dismantle_faction = yes
+		}
+		A28 = {
+			dismantle_faction = yes
+		}
+		A07 = {
+			dismantle_faction = yes
+		}
+		A19 = {
+			dismantle_faction = yes
+		}
+		FLX = {
+			remove_dynamic_modifier = { modifier = FLX_chaos }
+			remove_power_balance = {
+			    id = flx_balance
+			}
+			complete_national_focus = FLX_after_chaos
+			
+			set_politics = {
+			    ruling_party = fascism
+			    name = "反雷帝国复兴党"
+			    long_name = "反雷帝国复兴党"
+			}
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 1
+			}
+			add_country_leader_role = {
+		    character = qinghai
+		    promote_leader = yes
+		    country_leader = {
+		        ideology = fascism_ideology
+		        expire = "1965.1.1.1"
+		        traits = { 
+		        	trait_flx_after_chaos
+		        	trait_flx_after_chaos2
+		        	trait_flx_after_chaos3
+		        	trait_qinghai
+		        }
+		    }
+			}
+			A10 = {
+				every_core_state = {
+					add_core_of = FLX
+				}
+			}
+			FLX = {
+				annex_country = {
+				    target = A10
+				    transfer_troops = yes
+				}
+			}
+		}
+	}
+	option = { 
+		name = flx_event.16.a #no effect.do it in immediate
+		ai_chance = {
+			base = 50
+		}
+
+	}
+
+}
+country_event = {
+	id = flx_event.5
+	title = flx_event.5.t	
+	desc = flx_event.5.desc	#反雷协会总部大楼被占领
+	picture = GFX_event_test
+	is_triggered_only = no
+	fire_only_once = yes
+	major = no
+	hidden = no
+	trigger = {
+		tag = FLX
+		has_war = yes
+		not = {controls_province = 7315}
+	}
+
+	immediate = {
+		add_to_variable = {
+		    var = FLX.chaos
+		    value = -0.2
+		    tooltip = super_add_to_flx_chaos_tt
+		}
+	}
+	option = { 
+		name = flx_event.5.a #don't change(neutral&&[-0.5,0.5]/changed),historical
+		ai_chance = {
+			base = 50
+		}
+		trigger = {
+			or = {
+				not = {
+					has_country_leader = {
+					    name = "旋律蓝"
+					    ruling_only = yes
+					}
+				}
+				and = {
+					power_balance_value = {
+					    id = flx_balance
+					    value > -0.5
+					}
+					power_balance_value = {
+					    id = flx_balance
+					    value < 0.5
+					}
+				}
+			}
+		}
+		add_to_variable = {
+		    var = FLX.chaos
+		    value = -0.4
+		    tooltip = hyper_add_to_flx_chaos_tt
+		}
+	}
+	option = { 
+		name = flx_event.5.b #mono(neutral&&[-1,-0.2]),ai won't choose
+		ai_chance = {
+			base = 0
+		}
+		trigger = {
+			and = {
+				power_balance_value = {
+				    id = flx_balance
+				    value < -0.2
+				}
+				has_country_leader = {
+				    name = "旋律蓝"
+				    ruling_only = yes
+				}
+			  country_exists = A07
+			}
+
+		}
+		country_event = flx_event.2
+	}
+	option = { 
+		name = flx_event.5.c #huzhua(neutral&&[0.2,1]),ai won't choose
+		ai_chance = {
+			base = 0
+		}
+		trigger = {
+			and = {
+				power_balance_value = {
+				    id = flx_balance
+				    value > 0.2
+				}
+				has_country_leader = {
+				    name = "旋律蓝"
+				    ruling_only = yes
+				}
+		    or = {
+		    		country_exists = A05
+		    		country_exists = A28
+		    }
+	  	}
+		}
+		country_event = flx_event.3
+	}
+	option = { 
+		name = flx_event.5.d #surrender,not historical,but maybe that's the only option
+		ai_chance = {
+			base = 1
+		}
+		FLX = {
+			set_politics = {
+			  ruling_party = democratic
+			}
+			remove_power_balance = {
+			    id = flx_balance
+			}
+		}
+		A19 = {
+			puppet = {
+			    target = FLX
+			    end_wars = no
+			}
+		}
+	}
+
+}
+country_event = {
+	id = flx_event.6
+	title = flx_event.6.t	
+	desc = flx_event.6.desc	#街角建立选C联盟
+	picture = GFX_event_test
+	is_triggered_only = no
+	fire_only_once = yes
+	major = no
+	hidden = no
+	trigger = {
+    tag = A19
+		FLX = {
+			has_completed_focus = FLX_Public_3
+		}
+	}
+	immediate = {
+
+	}
+	option = { 
+		name = flx_event.6.a #historical
+		ai_chance = {
+			base = 50
+		}
+		A19 = {
+			leave_faction = yes
+			create_faction = CHOOSE_C_FACTION
+			every_other_country = {
+				limit = {
+					or = {
+						has_country_leader_ideology = choose_c
+						has_country_leader_ideology = choose_c_democratic
+						has_country_leader_ideology = choose_c_communism
+						has_country_leader_ideology = choose_c_fascism
+						has_country_leader_ideology = choose_c_neutrality
+						
+					}
+				}
+				leave_faction = yes
+				A19 = { add_to_faction = PREV }
+			}
+		}
+			add_to_array = { global.C_members = SMI}
+			add_to_array = { global.C_members = KAR}
+			add_to_array = { global.C_members = CRI}
+			add_to_array = { global.C_members = KAL}
+			add_to_array = { global.C_members = DAG}
+			add_to_array = { global.C_members = AZR}
+			add_to_array = { global.C_members = ARM}
+			add_to_array = { global.C_members = GEO}
+			add_to_array = { global.C_members = ABK}
+			add_to_array = { global.C_members = KBK}
+			add_to_array = { global.C_members = NOA}
+			add_to_array = { global.C_members = CIN}
+			add_to_array = { global.C_members = MEL}
+			add_to_array = { global.C_members = CHU}
+			add_to_array = { global.C_members = TAT}
+			add_to_array = { global.C_members = UDM}
+			add_to_array = { global.C_members = BSK}
+			add_to_array = { global.C_members = SMI}
+			add_to_array = { global.C_members = NEN}
+			add_to_array = { global.C_members = KOM}
+			add_to_array = { global.C_members = YAM}
+			add_to_array = { global.C_members = OVO}
+			add_to_array = { global.C_members = TAY}
+			add_to_array = { global.C_members = YAK}
+			add_to_array = { global.C_members = FER}#major
+			add_to_array = { global.C_members = CKK}
+			add_to_array = { global.C_members = VLA}
+			add_to_array = { global.C_members = BYA}
+			add_to_array = { global.C_members = KHA}
+			add_to_array = { global.C_members = ALT}
+			add_to_array = { global.C_members = VGE}
+			add_to_array = { global.C_members = KAZ}
+			add_to_array = { global.C_members = KKP}
+			add_to_array = { global.C_members = KHI}
+			add_to_array = { global.C_members = TMS}
+			add_to_array = { global.C_members = UZB}
+			add_to_array = { global.C_members = BUK}
+			add_to_array = { global.C_members = TAJ}
+			add_to_array = { global.C_members = KYR}
+	}
+}
+country_event = {
+	id = flx_event.7
+	title = flx_event.7.t	
+	desc = flx_event.7.desc	#街角给手下发兵
+	picture = GFX_event_test
+	is_triggered_only = no
+	fire_only_once = no
+	major = no
+	hidden = no
+	trigger = {
+    tag = A19
+    any_country = {
+			is_in_faction_with = A19
+			not = {has_idea = HuangTianBa2}
+    }
+    date > 1937.1.1
+	}
+	immediate = {
+
+	}
+	option = { 
+		name = flx_event.7.a #historical
+		ai_chance = {
+			base = 50
+		}
+		
+		every_country = {
+			limit = {
+				is_in_faction_with = A19
+				not = {has_idea = HuangTianBa2}
+			}
+			if = {
+				limit = {
+					not = {has_idea = HuangTianBa}
+					not = {has_idea = HuangTianBa2}
+				}
+				add_ideas = HuangTianBa2
+			}
+			random_state = {
+			    limit = {
+			        is_owned_by = PREV
+			    }
+		    	if = {
+		    		limit = {
+		    			PREV = {
+		    				not = {
+			    				has_template = "民兵"
+			    			}
+		    			}
+		    			
+		    		}
+						PREV = {
+							division_template = {
+								name = "民兵"				# Represents: German-trained divisions (better equipment than rest),
+								regiments = {					#	and local militia groups.
+									infantry = { x = 0 y = 0 }	# Note: Chinese divisions were brigade-sized compared other nations' armies
+									infantry = { x = 0 y = 1 }
+									infantry = { x = 0 y = 2 }
+									infantry = { x = 0 y = 3 }
+									
+								}
+							}
+							set_division_template_lock = {
+							    division_template = "民兵"
+							    is_locked = yes
+							}
+						}
+
+		    	}
+					create_unit = {
+					    division = "name = \"街角秘密军队\" division_template = \"民兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					    owner = PREV
+					    count = 5
+					}
+			}
+		}
+	}
+}
+country_event = {
+	id = flx_event.8
+	title = flx_event.8.t	
+	desc = flx_event.8.desc	#吃鸡小战
+	picture = GFX_event_test
+	is_triggered_only = no
+	fire_only_once = yes
+	major = no
+	hidden = no
+	trigger = {
+    tag = A19
+    date > 1936.9.1
+	}
+	immediate = {
+
+	}
+	option = { 
+		name = flx_event.8.a #historical
+		ai_chance = {
+			base = 50
+		}
+    SIK = {
+        declare_war_on = {
+            target = A05
+            type = annex_everything
+        }
+    }
+    SIK = {
+        declare_war_on = {
+            target = A06
+            type = annex_everything
+        }
+    }
+    A05 = {
+        declare_war_on = {
+            target = A06
+            type = annex_everything
+        }
+    }
+    XSM = {
+        declare_war_on = {
+            target = A10
+            type = annex_everything
+        }
+    }
+    XSM = {
+        declare_war_on = {
+            target = A22
+            type = annex_everything
+        }
+    }
+    A10 = {
+        declare_war_on = {
+            target = A22
+            type = annex_everything
+        }
+    }
+	}
+}
+news_event = {
+	id = flx_event.9
+	title = flx_event.9.t	
+	desc = flx_event.9.desc	#吃鸡小战 新疆胜利
+	picture = GFX_event_test
+	is_triggered_only = no
+	fire_only_once = yes
+	major = yes
+	hidden = no
+	trigger = {
+		or = {
+	    not = {
+	    	country_exists = A05
+	    }
+	    A05 = {
+	    		has_capitulated = yes
+	    }
+		}
+		or = {
+	    not = {
+	    	country_exists = A06
+	    }
+	    A06 = {
+	    		has_capitulated = yes
+	    }
+		}
+		and = {
+			country_exists = SIK
+			SIK = {
+				has_capitulated = no
+			}
+		}
+		
+	}
+	immediate = {
+
+	}
+	option = { 
+		name = flx_event.9.a #historical
+		ai_chance = {
+			base = 50
+		}
+		SIK = {
+			every_core_state = {
+				set_state_owner_to = SIK
+				set_state_controller_to = SIK
+			}
+		}
+	}
+}
+news_event = {
+	id = flx_event.10
+	title = flx_event.10.t	
+	desc = flx_event.10.desc	#吃鸡小战 虎爪胜利
+	picture = GFX_event_test
+	is_triggered_only = no
+	fire_only_once = yes
+	major = yes
+	hidden = no
+	trigger = {
+		or = {
+	    not = {
+	    	country_exists = SIK
+	    }
+	    SIK = {
+	    		has_capitulated = yes
+	    }
+		}
+		or = {
+	    not = {
+	    	country_exists = A06
+	    }
+	    A06 = {
+	    		has_capitulated = yes
+	    }
+		}
+		and = {
+			country_exists = A05
+			A05 = {
+				has_capitulated = no
+			}
+		}
+	}
+	immediate = {
+
+	}
+	option = { 
+		name = flx_event.10.a #historical
+		ai_chance = {
+			base = 50
+		}
+		SIK = {
+			every_core_state = {
+				add_core_of = A05
+				set_state_owner_to = A05
+				set_state_controller_to = A05
+			}
+		}
+	}
+}
+news_event = {
+	id = flx_event.11
+	title = flx_event.11.t	
+	desc = flx_event.11.desc	#吃鸡小战 C胜利
+	picture = GFX_event_test
+	is_triggered_only = no
+	fire_only_once = yes
+	major = yes
+	hidden = no
+	trigger = {
+		or = {
+	    not = {
+	    	country_exists = SIK
+	    }
+	    SIK = {
+	    		has_capitulated = yes
+	    }
+		}
+		or = {
+	    not = {
+	    	country_exists = A05
+	    }
+	    A05 = {
+	    		has_capitulated = yes
+	    }
+		}
+		and = {
+			country_exists = A06
+			A06 = {
+				has_capitulated = no
+			}
+		}
+	}
+	immediate = {
+
+	}
+	option = { 
+		name = flx_event.11.a #historical
+		ai_chance = {
+			base = 50
+		}
+		SIK = {
+			every_core_state = {
+				add_core_of = A06
+				set_state_owner_to = A06
+				set_state_controller_to = A06
+			}
+		}
+	}
+}
+news_event = {
+	id = flx_event.12
+	title = flx_event.12.t	
+	desc = flx_event.12.desc	#吃鸡小战 三马胜利
+	picture = GFX_event_test
+	is_triggered_only = no
+	fire_only_once = yes
+	major = yes
+	hidden = no
+	trigger = {
+		or = {
+	    not = {
+	    	country_exists = A10
+	    }
+	    A10 = {
+	    		has_capitulated = yes
+	    }
+		}
+		or = {
+	    not = {
+	    	country_exists = A22
+	    }
+	    A22 = {
+	    		has_capitulated = yes
+	    }
+		}
+		and = {
+			country_exists = XSM
+			XSM = {
+				has_capitulated = no
+			}
+		}
+	}
+	immediate = {
+
+	}
+	option = { 
+		name = flx_event.12.a #historical
+		ai_chance = {
+			base = 50
+		}
+		XSM = {
+			every_core_state = {
+				#add_core_of = A06
+				set_state_owner_to = XSM
+				set_state_controller_to = XSM
+			}
+		}
+	}
+}
+news_event = {
+	id = flx_event.14
+	title = flx_event.14.t	
+	desc = flx_event.14.desc	#吃鸡小战 氢氦胜利
+	picture = GFX_event_test
+	is_triggered_only = no
+	fire_only_once = yes
+	major = yes
+	hidden = no
+	trigger = {
+		or = {
+	    not = {
+	    	country_exists = XSM
+	    }
+	    XSM = {
+	    		has_capitulated = yes
+	    }
+		}
+		or = {
+	    not = {
+	    	country_exists = A22
+	    }
+	    A22 = {
+	    		has_capitulated = yes
+	    }
+		}
+		and = {
+			country_exists = A10
+			A10 = {
+				has_capitulated = no
+			}
+		}
+	}
+	immediate = {
+
+	}
+	option = { 
+		name = flx_event.14.a #historical
+		ai_chance = {
+			base = 50
+		}
+		XSM = {
+			every_core_state = {
+				add_core_of = A10
+				set_state_owner_to = A10
+				set_state_controller_to = A10
+			}
+		}
+	}
+}
+news_event = {
+	id = flx_event.15
+	title = flx_event.15.t	
+	desc = flx_event.15.desc	#吃鸡小战 ksqsk胜利
+	picture = GFX_event_test
+	is_triggered_only = no
+	fire_only_once = yes
+	major = yes
+	hidden = no
+	trigger = {
+		or = {
+	    not = {
+	    	country_exists = XSM
+	    }
+	    XSM = {
+	    		has_capitulated = yes
+	    }
+		}
+		or = {
+	    not = {
+	    	country_exists = A10
+	    }
+	    A10 = {
+	    		has_capitulated = yes
+	    }
+		}
+		and = {
+			country_exists = A22
+			A22 = {
+				has_capitulated = no
+			}
+		}
+	}
+	immediate = {
+
+	}
+	option = { 
+		name = flx_event.15.a #historical
+		ai_chance = {
+			base = 50
+		}
+		XSM = {
+			every_core_state = {
+				add_core_of = A22
+				set_state_owner_to = A22
+				set_state_controller_to = A22
+			}
+		}
+	}
+}
+country_event = {
+	id = flx_event.17
+	title = flx_event.17.t	
+	desc = flx_event.17.desc	#街角对苏联选C
+	picture = GFX_event_test
+	is_triggered_only = no
+	fire_only_once = yes
+	major = no
+	hidden = no
+	trigger = {
+    tag = A19
+    date > 1937.6.1
+	}
+	immediate = {
+
+	}
+	option = { 
+		name = flx_event.17.a #historical
+		ai_chance = {
+			base = 50
+		}
+    A19 = {
+        declare_war_on = {
+            target = SOV
+            type = annex_everything
+        }
+				swap_ideas = {
+				    remove_idea = HuangTianBa
+				    add_idea = HuangTianBa2
+				}
+    }
+		UKR = {
+			every_core_state = {
+				add_core_of = A19
+				set_state_owner_to = A19
+				set_state_controller_to = A19
+				create_unit = {
+				    division = "name = \"街角秘密军队\" division_template = \"民兵\" start_experience_factor = 1 start_equipment_factor = 1"
+				    owner = A19
+				    count = 5
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = flx_event.18
+	title = flx_event.18.t	
+	desc = flx_event.18.desc	#德国参战
+	picture = GFX_event_test
+	is_triggered_only = no
+	fire_only_once = yes
+	major = no
+	hidden = no
+	trigger = {
+    tag = GER
+    date > 1941.1.1
+	}
+	immediate = {
+
+	}
+	option = { 
+		name = flx_event.18.a #historical
+		ai_chance = {
+			base = 50
+		}
+    GER = {
+        declare_war_on = {
+            target = A19
+            type = annex_everything
+        }
+        declare_war_on = {
+            target = FLX
+            type = annex_everything
+        }
+        declare_war_on = {
+            target = A07
+            type = annex_everything
+        }
+        declare_war_on = {
+            target = A05
+            type = annex_everything
+        }
+        declare_war_on = {
+            target = A28
+            type = annex_everything
+        }
+        declare_war_on = {
+            target = SOV
+            type = annex_everything
+        }
+    }
+	}
+}
+country_event = {
+	id = flx_event.19
+	title = flx_event.19.t	
+	desc = flx_event.19.desc	#白俄参战
+	picture = GFX_event_test
+	is_triggered_only = no
+	fire_only_once = yes
+	major = no
+	hidden = no
+	trigger = {
+    tag = BLR
+    SOV = {
+    	exists = yes
+    }
+    date > 1940.9.1
+	}
+	immediate = {
+
+	}
+	option = { 
+		name = flx_event.19.a #historical
+		ai_chance = {
+			base = 1
+			modifier = {
+		    SOV = {
+		    	surrender_progress < 0.8
+		    }
+		    add = 99
+			}
+		}
+    SOV = {
+      add_to_faction = BLR
+    }
+    BLR = {
+			random_state = {
+			    limit = {
+			        is_owned_by = PREV
+			    }
+		    	if = {
+		    		limit = {
+		    			PREV = {
+		    				not = {
+			    				has_template = "民兵"
+			    			}
+		    			}
+		    			
+		    		}
+						PREV = {
+							division_template = {
+								name = "民兵"				# Represents: German-trained divisions (better equipment than rest),
+								regiments = {					#	and local militia groups.
+									infantry = { x = 0 y = 0 }	# Note: Chinese divisions were brigade-sized compared other nations' armies
+									infantry = { x = 0 y = 1 }
+									infantry = { x = 0 y = 2 }
+									infantry = { x = 0 y = 3 }
+									
+								}
+							}
+							set_division_template_lock = {
+							    division_template = "民兵"
+							    is_locked = yes
+							}
+						}
+
+		    	}
+					create_unit = {
+					    division = "name = \"白俄突击队\" division_template = \"民兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					    owner = PREV
+					    count = 30
+					}
+			}
+    }
+	}
+	option = { 
+		name = flx_event.19.b #historical
+		ai_chance = {
+			base = 10
+		}
+    A19 = {
+      add_to_faction = BLR
+    }
+    BLR = {
+			random_state = {
+			    limit = {
+			        is_owned_by = PREV
+			    }
+		    	if = {
+		    		limit = {
+		    			PREV = {
+		    				not = {
+			    				has_template = "民兵"
+			    			}
+		    			}
+		    			
+		    		}
+						PREV = {
+							division_template = {
+								name = "民兵"				# Represents: German-trained divisions (better equipment than rest),
+								regiments = {					#	and local militia groups.
+									infantry = { x = 0 y = 0 }	# Note: Chinese divisions were brigade-sized compared other nations' armies
+									infantry = { x = 0 y = 1 }
+									infantry = { x = 0 y = 2 }
+									infantry = { x = 0 y = 3 }
+									
+								}
+							}
+							set_division_template_lock = {
+							    division_template = "民兵"
+							    is_locked = yes
+							}
+						}
+
+		    	}
+					create_unit = {
+					    division = "name = \"白俄突击队\" division_template = \"民兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					    owner = PREV
+					    count = 30
+					}
+			}
+    }
+	}
+}
+country_event = {
+	id = flx_event.20
+	title = flx_event.20.t	
+	desc = flx_event.20.desc	#选C势力扩大
+	picture = GFX_event_test
+	is_triggered_only = no
+	fire_only_once = no
+	major = no
+	hidden = yes
+	trigger = {
+		tag = A19
+    A19 = {
+    	has_war_with = SOV
+    }
+	}
+	mean_time_to_happen = {
+    days = 7
+    modifier = {
+      factor = 0.2
+      A19 = {
+      	is_ai = yes
+      	surrender_progress > 0.7
+      }
+    }
+	}
+	immediate = {
+
+	}
+	option = { 
+		name = flx_event.20.a #historical
+		ai_chance = {
+			base = 50
+		}
+		random_scope_in_array = {
+	    array = global.C_members
+	    break = break
+	    limit = {
+	        exists = no
+	    }
+    	SOV = {
+    		release = PREV
+    	}
+    	A19 = {
+    		add_to_faction = PREV
+    	}
+    	SOV = {
+				declare_war_on = {
+				    target = PREV
+				    type = annex_everything
+				}
+    	}
+			random_state = {
+			    limit = {
+			        is_owned_by = PREV
+			    }
+		    	if = {
+		    		limit = {
+		    			PREV = {
+		    				not = {
+			    				has_template = "民兵"
+			    			}
+		    			}
+		    			
+		    		}
+						PREV = {
+							division_template = {
+								name = "民兵"				# Represents: German-trained divisions (better equipment than rest),
+								regiments = {					#	and local militia groups.
+									infantry = { x = 0 y = 0 }	# Note: Chinese divisions were brigade-sized compared other nations' armies
+									infantry = { x = 0 y = 1 }
+									infantry = { x = 0 y = 2 }
+									infantry = { x = 0 y = 3 }
+									
+								}
+							}
+							set_division_template_lock = {
+							    division_template = "民兵"
+							    is_locked = yes
+							}
+						}
+
+		    	}
+					create_unit = {
+					    division = "name = \"街角秘密军队\" division_template = \"民兵\" start_experience_factor = 1 start_equipment_factor = 1"
+					    owner = PREV
+					    count = 5
+					}
+			}
+		}
+	}
+}
+country_event = {
+	id = lsw_event.1
+	title = lsw_event.1.t	
+	desc = lsw_event.1.desc	#雷绍武病危
+	picture = GFX_event_test
+	is_triggered_only = no
+	fire_only_once = no
+	major = no
+	hidden = no
+	trigger = {
+    tag = LSW
+    LSW = {
+			has_country_leader = {
+			    name = "雷绍武"
+			    ruling_only = yes
+			}
+    }
+		check_variable = {
+		    var = LSW.health
+		    value = 0
+		    compare = less_than_or_equals
+		}
+	}
+	mean_time_to_happen = {
+	    days = 2
+	}
+	immediate = {
+
+	}
+	option = { 
+		name = lsw_event.1.a #aid. historical at stage2
+		ai_chance = {
+			base = 1
+		}
+		trigger = {
+			power_balance_value = {
+			    id = lsw_balance
+			    value > -0.8
+			}
+		}
+		add_to_variable = {
+		    var = LSW.health
+		    value = 0.15
+		    tooltip = hyper_add_to_lsw_health_tt
+		}
+		add_power_balance_value = {
+		    id = lsw_balance
+		    value = -0.2
+		}
+	}
+	option = { 
+		name = lsw_event.1.b #die. historical at stage3
+		ai_chance = {
+			base = 0
+		}
+		country_event = lsw_event.2
+	}
+}
+country_event = {
+	id = lsw_event.2
+	title = lsw_event.2.t	
+	desc = lsw_event.2.desc	#雷绍武进盒
+	picture = GFX_event_test
+	is_triggered_only = yes
+	fire_only_once = no
+	major = no
+	hidden = no
+	
+	immediate = {
+
+	}
+	option = { 
+		name = lsw_event.2.a #historical
+		ai_chance = {
+			base = 50
+		}
+		kill_country_leader = yes
+		add_country_leader_role = {
+		    character = lsw_weiyuanhui
+		    promote_leader = yes
+		    country_leader = {
+		        ideology = fascism_ideology
+		        expire = "1965.1.1.1"
+		        traits = { 
+		        	trait_lsw_weiyuanhui 
+		        }
+		    }
+		}
+		set_country_flag = lsw_death_flag
+		complete_national_focus = LSW_death
+	}
+
+}
+country_event = {
+	id = lsw_event.3
+	title = lsw_event.3.t	
+	desc = lsw_event.3.desc	#雷绍武治疗成功
+	picture = GFX_event_test
+	is_triggered_only = yes
+	fire_only_once = no
+	major = no
+	hidden = no
+	
+	immediate = {
+
+	}
+	option = { 
+		name = lsw_event.3.a #historical
+		ai_chance = {
+			base = 50
+		}
+
+	}
+
+}
+country_event = {
+	id = lsw_event.4
+	title = lsw_event.4.t	
+	desc = lsw_event.4.desc	#雷绍武治疗失败
+	picture = GFX_event_test
+	is_triggered_only = yes
+	fire_only_once = no
+	major = no
+	hidden = no
+	
+	immediate = {
+
+	}
+	option = { 
+		name = lsw_event.4.a #historical
+		ai_chance = {
+			base = 50
+		}
+
+	}
+
+}
+country_event = {
+	id = lsw_event.5
+	title = lsw_event.5.t	
+	desc = lsw_event.5.desc	#雷绍武开局事件
+	picture = GFX_event_test
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = no
+	hidden = no
+	
+	immediate = {
+
+	}
+	option = { 
+		name = lsw_event.5.a #historical
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+country_event = {
+	id = lsw_event.6
+	title = lsw_event.6.t	
+	desc = lsw_event.6.desc	#建立1113战斗队
+	picture = GFX_event_test
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = no
+	hidden = no
+	
+	immediate = {
+
+	}
+	option = { 
+		name = lsw_event.6.a #historical
+		ai_chance = {
+			base = 50
+		}
+	}
+}

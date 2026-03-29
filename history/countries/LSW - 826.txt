@@ -5,7 +5,7 @@
 recruit_character = JiangHaiYun
 recruit_character = LeiShaoWu
 recruit_character = ZhangZhuSheng
-
+recruit_character = lsw_weiyuanhui
 set_stability = 0.5
 set_war_support = 0.5
 # Starting tech
@@ -64,9 +64,9 @@ add_ideas = {
 create_country_leader = {
 	name = "江海云" #领导人名字
 	desc = "JIANGHAIYUN_DESC" #领导人介绍
-	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_land_1.dds" #领导人图片
+	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_land_2.dds" #领导人图片
 	expire = "1965.1.1" #领导人退休时间
-	ideology = marxism #领导人子意识形态
+	ideology = Stalinism #领导人子意识形态
 	traits = { #领导人特质
 		trait_ZhengWei
 	}
@@ -102,7 +102,7 @@ create_country_leader = {
 }
 create_country_leader = {
 	name = "雷绍武" #领导人名字
-	desc = "LEISHAOWU_DESC" #领导人介绍
+	desc = "LEISHAOWU_DESC"
 	picture = "lsw.dds" #领导人图片
 	expire = "1965.1.1" #领导人退休时间
 	ideology = fascism_ideology #领导人子意识形态
